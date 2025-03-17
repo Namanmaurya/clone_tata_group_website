@@ -1,0 +1,261 @@
+/* Basic modal styles */
+
+
+.col-md-4 {
+    padding: 0;
+}
+
+.model {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    overflow: hidden;
+}
+
+/* Modal content */
+.model .row {
+    background-color: #fff;
+    width: 65%;
+    height: 95%;
+    display: flex;
+}
+
+
+
+/* Close button */
+.model .close-btn {
+    position: absolute;
+    top: 24px;
+    right: 230px;
+    background-color: transparent;
+    color: red;
+    font-size: 20px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid red;
+    margin: 0px 0px;
+    z-index: 1010;
+    padding: 1px 1px;
+}
+
+/* Input fields */
+.model .form-group input,
+.model .form-group select {
+    padding: 0 110px 0 20px;
+    color: #494949;
+    font-size: 18px;
+    height: 50px;
+    width: 100%;
+    transition: black 0.3s ease;
+}
+
+
+
+
+
+.model .form-group input::placeholder,
+.model .form-group select {
+    color: #888;
+    height: 50px;
+    font-size: 16px;
+}
+
+
+/* Basic input styles */
+.styled-input {
+    
+    border: 1px solid #ccc; 
+    outline: none; 
+    transition: border-color 0.3s ease; 
+}
+
+.styled-input:focus {
+    border-color: #3498db; 
+}
+
+
+.styled-input:hover {
+    border-color: #fc6a5a; 
+}
+
+/* Submit button */
+.model .button {
+    position: relative;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 14px 30px 14px 30px;
+    font-family: rubic, sans-serif;
+    font-weight: bold;
+    width: 160px;
+    border: 0;
+    cursor: pointer;
+    overflow: hidden; 
+    transition: color 0.4s ease; 
+    z-index: 1;
+}
+
+.model .button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    transition: left 0.6s ease;
+    z-index: -1;
+}
+
+
+
+.model .button:hover::after {
+    left: 0;
+    
+}
+
+.model .button:hover {
+    color: white;
+}
+
+
+
+.modelimg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    
+}
+
+.modelimg img {
+    width: 100%;
+    height: 80.5% ;
+    object-fit: cover;
+    overflow: hidden;
+
+}
+
+/* Transition effects for modal opening and closing */
+.model.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.card-body {
+    padding: 20px 30px;
+}
+
+.card-body h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-family: popins, sans-serif;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.card-body p {
+    font-family: rubic, sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+}
+
+
+.model_text2{
+    font-family: rubic, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #707070;
+    margin: 15px 0px;
+}
+
+
+@media(max-width: 1440px) {
+   
+
+    .model .form-group input {
+        height: 49px;
+    }
+    /* .modelimg img{
+        height: 93%;
+    } */
+
+    .model .close-btn{
+        right: 260px;
+    }
+}
+
+@media(max-width: 1024px){
+    .model .close-btn{
+        right: 200px;
+    }
+    .model .form-group input{
+        height: 40px;
+    }
+
+    .model .form-group select {
+        height: 40px;
+    }
+
+    .modelimg img {
+        height: 88%;
+    }
+    
+}
+
+@media(max-width: 768px){
+    .modelimg img {
+        height: 83.5%;
+    }
+
+    .card-body {
+        padding: 10px 30px;
+    }
+
+    .model .close-btn {
+        right: 150px;
+    }
+}
+
+@media (max-width: 426px) {
+    .model .close-btn {
+        right: 85px;
+    }
+
+    .modelimg {
+        display: none;
+    }
+
+    .card-body h3 {
+        font-size: 30px;
+        margin-bottom: 6px;
+    }
+
+    .card-body {
+        padding: 10px 20px;
+    }
+
+    .card-body p {
+        font-size: 12px;
+        
+    }
+
+    .model .button{
+        padding: 10px 20px 10px 20px;
+    }
+}
