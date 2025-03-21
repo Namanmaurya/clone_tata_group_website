@@ -100,13 +100,74 @@
             font-style: normal;
             background-color: #ed3b3e;
         }
+
+        .industry-card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .industry-card img {
+            height: 200px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .industry-card:hover {
+            transform: scale(1.05);
+        }
+
+        .industry-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .read-more {
+            display: block;
+            margin-top: 10px;
+            font-weight: 400;
+            text-decoration: none;
+            color: black;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .read-more:hover {
+            color: white;
+        }
+
+        .row.g-4 {
+            row-gap: 20px;
+        }
+
+        .card:hover a {
+            color: white;
+        }
+
+        .industry h2 {
+            font-weight: 400;
+            font-size: 45px;
+            line-height: 50px;
+            color: #002c42;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 769px) {
+            .factory_hero_section {
+                margin-top: 125px;
+            }
+        }
+
+        @media (max-width: 426px) {
+            .factory_hero_section {
+                margin-top: 92px;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-navbar">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg fixed-navbar">
         <div class="container">
             <a class="navbar-brand1" href="index.php">
                 <img class="logo" src="assets/Images/ece-logo.png" alt="logo">
@@ -157,10 +218,10 @@
                 </div>
             </li>
             <li>
-                <a href="#">SMART Technology</a>
+                <a href="smart_technology.php">SMART Technology</a>
             </li>
             <li>
-                <a href="#">Career</a>
+                <a href="career.php">Career</a>
             </li>
             <li>
                 <a href="blog.php">Blogs</a>
@@ -208,12 +269,88 @@
             </div>
         </section>
 
-        <section class="industry_cards">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="industry_title">
-                            <h2>Elevate to Smart</h2>
+        <section class="industry">
+            <div class="container py-5">
+                <h2 class="text-center mb-4">Elevate to <b>Smart</b></h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card industry-card">
+                            <img src="assets\Images\ece-office-elevator.jpg" class="card-img-top" alt="Industry Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Office Elevator</h5>
+                                <p class="card-text">Commercial office building elevator systems must be configured to
+                                    match the expected traffic requirements both present and future.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card industry-card">
+                            <img src="assets\Images\ece-hotel-elevator.jpg" class="card-img-top" alt="Industry Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Hotel Elevator</h5>
+                                <p class="card-text">Hotels need elevators that deliver high performance, have low
+                                    break- downs , smooth operation and have beautiful aesthetics.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card industry-card">
+                            <img src="assets\Images\automobile-elevator-website.jpg" class="card-img-top"
+                                alt="Industry Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Automobile Elevator</h5>
+                                <p class="card-text">Automobile elevators are used in parking structures, apartment
+                                    suits, auto dealership and even homes as well.</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card industry-card">
+                            <img src="assets\Images\industrial-elevator.jpg" class="card-img-top" alt="Industry Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Industrial Elevator</h5>
+                                <p class="card-text">ECE holds the expertise of catering to the industrial elevators
+                                    building needs, be it the high travel elevator requirement,</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card industry-card">
+                            <img src="assets\Images\ECE-Escalator.jpeg" class="card-img-top" alt="Industry Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">ECE Escalator</h5>
+                                <p class="card-text">ECE-Sword Escalators and Travellators are the best suited for
+                                    portability situations for expensive open spaces with high activity…</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card industry-card">
+                            <img src="assets\Images\ECE-Residential-Elevator.jpg" class="card-img-top"
+                                alt="Industry Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Residential</h5>
+                                <p class="card-text">ECE Elevators bring convenience at your door step. They are
+                                    luxurious, spacious and provide safety and reliability. </p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card industry-card">
+                            <img src="assets\Images\ece-hospital-elevator.jpg" class="card-img-top"
+                                alt="Industry Image">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Hospital Elevator</h5>
+                                <p class="card-text">Generally, hospital elevators have requirements as laid down by the
+                                    operating authorities of the hospital. Elevators will be required for patients,</p>
+                                <a href="#" class="read-more">Read More</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -239,11 +376,11 @@
                 </div>
                 <div class="col-md-2">
                     <div class="footer_icon">
-                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -261,7 +398,7 @@
                         <h3><a href="#">18005320323</a></h3>
                     </div>
                     <div class="footer_button">
-                        <button><a href="">ENQUIRY</a></button>
+                        <button><a href="enquiry_new.php">ENQUIRY</a></button>
                     </div>
                 </div>
                 <div class="col-md-3 widget">
@@ -270,11 +407,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Our History</a></li>
-                            <li><a href="#">Factory</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Blogs</a></li>
+                            <li><a href="company_overview.php">About Us</a></li>
+                            <li><a href="company_overview.php">Our History</a></li>
+                            <li><a href="factory.php">Factory</a></li>
+                            <li><a href="fap.php">FAQs</a></li>
+                            <li><a href="blog.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -284,11 +421,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">Residential</a></li>
-                            <li><a href="#">Commercial</a></li>
-                            <li><a href="#">Hospitals</a></li>
-                            <li><a href="#">Hotel</a></li>
-                            <li><a href="#">Industry</a></li>
+                            <li><a href="credentials.php">Residential</a></li>
+                            <li><a href="credentials.php">Commercial</a></li>
+                            <li><a href="credentials.php">Hospitals</a></li>
+                            <li><a href="credentials.php">Hotel</a></li>
+                            <li><a href="credentials.php">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -298,9 +435,9 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">Enquiry</a></li>
-                            <li><a href="#">Branches</a></li>
-                            <li><a href="#">Smart Customer Connect</a></li>
+                            <li><a href="enquiry_new.php">Enquiry</a></li>
+                            <li><a href="branches.php">Branches</a></li>
+                            <li><a href="smart_technology.php">Smart Customer Connect</a></li>
                             <li><a href="#">Virup Portal</a></li>
 
                         </ul>
@@ -320,7 +457,6 @@
             </div>
         </div>
     </footer>
-
 
 
     <!-- Scroll Up Button -->

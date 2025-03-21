@@ -32,44 +32,175 @@
         rel="stylesheet">
 
     <style>
-
-        .blog_section{
-            padding: 150px 0px;
-            position: relative;
+        /* Blog Section Styling */
+        .blog_section {
+            margin-top: 100px;
+            padding: 50px 0;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        /* Card hover effect */
+
+        .blog_title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .blog_title h2 {
+            font-family: "Poppins", Sans-serif;
+            font-size: 60px;
+            font-weight: 500;
+            line-height: 1.4em;
+            color: #ED3B3E;
+        }
+
         .blog_card {
+
             transition: transform 0.3s ease-in-out;
         }
 
-        
+        .blog_card:hover {
+            transform: translateY(-5px);
+        }
 
-        /* Pagination container */
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+
         .pagination-container {
-            display: flex;
-            justify-content: center;
+            text-align: center;
             margin-top: 20px;
         }
 
-        /* Page transition effects */
-        .page-container {
-            
-            min-height: 200px;
+        .pagination-container button {
+            font-size: 1rem;
+            padding: 7px 14px;
+            color: black;
         }
 
+        /* Hide inactive pages */
         .page {
-            position: absolute;
-            width: 100%;
-            transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(10px);
+            display: none;
         }
 
         .page.active {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .blog_card {
+            display: flex;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .card-image {
+            flex: 0 0 40%;
+        }
+
+        .card-image img {
+            width: 375px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 0px 20px;
+        }
+
+        .card-category {
+            color: #002b5b;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            color: #002c42 !important;
+            font-size: 28px;
+            line-height: 1.5em;
+        }
+
+        .card-date {
+            font-style: normal;
+            font-size: 14px;
+            display: inline-block;
+            font-family: "Rubik", sans-serif;
+            color: #002c42 !important;
+        }
+
+        .card-text {
+            font-family: "Rubik", sans-serif;
+            font-weight: 400;
+            color: #555c63 !important;
+            font-size: 18px;
+            line-height: 1.5em;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: black;
+            border: 1px solid black;
+            text-decoration: none;
+        }
+
+
+
+        .read-more:hover {
+            text-decoration: none;
+            border: none;
+            background: red;
+            color: white;
+        }
+
+        .next_p_btn {
+            border: 1px solid black;
+        }
+
+        .next_p_btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        @media (max-width:1025px) {
+            .card-content {
+
+                padding: 0px 40px;
+            }
+
+            .card-image img {
+                width: 330px;
+            }
+        }
+
+        @media (max-width:769px) {
+            .card-content {
+                padding: 15px 0px;
+            }
         }
     </style>
 </head>
@@ -128,10 +259,10 @@
                 </div>
             </li>
             <li>
-                <a href="#">SMART Technology</a>
+                <a href="smart_technology.php">SMART Technology</a>
             </li>
             <li>
-                <a href="#">Career</a>
+                <a href="career.php">Career</a>
             </li>
             <li>
                 <a href="blog.php">Blogs</a>
@@ -158,7 +289,7 @@
         <section class="blog_section">
             <div class="container">
                 <div class="row">
-                    <div class="blog_title text-center">
+                    <div class="blog_title">
                         <h2>My Blog</h2>
                     </div>
                     <div class="col-md-12">
@@ -166,47 +297,155 @@
                             <!-- Page 1: 4 Cards -->
                             <div class="row page active" id="page-1">
                                 <div class="col-md-12 mb-3">
-                                    <div class="blog_card p-3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card 1</h5>
-                                            <p class="card-text">This is the first card.</p>
+                                    <div class="blog_card p-3 d-flex">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="card-image">
+                                                    <img src="assets\Images\blog_card_img1.jpeg" alt="Freight Elevator">
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="card-content">
+
+                                                    <h2 class="card-title">ECE Goods / Freight / Cargo
+                                                        Elevators-Redefining
+                                                        Vertical Mobility for Industrial Buildings
+                                                        and Warehouses</h2>
+                                                    <p class="card-date">NOVEMBER 2, 2023</p>
+                                                    <p class="card-text">
+                                                        Goods elevators, also known as freight elevators or cargo lifts,
+                                                        play a
+                                                        crucial role in various industries, warehouses, and buildings,
+                                                        facilitating the efficient movement of...
+                                                    </p>
+                                                    <a href="#" class="read-more">Read More</a>
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <div class="blog_card p-3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card 2</h5>
-                                            <p class="card-text">This is the second card.</p>
+
+                                <div class="col-lg-12 mb-3">
+                                    <div class="blog_card p-3 d-flex">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="card-image">
+                                                    <img src="assets\Images\blog_card_img2.jpg" alt="Freight Elevator">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="card-content">
+                                                    <h5 class="card-category">ECE Goods / Freight / Cargo Elevators</h5>
+                                                    <h3 class="card-title">Redefining Vertical Mobility for Industrial
+                                                        Buildings
+                                                        and Warehouses</h3>
+                                                    <p class="card-date">NOVEMBER 2, 2023</p>
+                                                    <p class="card-text">
+                                                        Goods elevators, also known as freight elevators or cargo lifts,
+                                                        play a
+                                                        crucial role in various industries, warehouses, and buildings,
+                                                        facilitating the efficient movement of...
+                                                    </p>
+                                                    <a href="#" class="read-more">Read More</a>
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <div class="blog_card p-3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card 3</h5>
-                                            <p class="card-text">This is the third card.</p>
+                                <div class="col-lg-12 mb-3">
+                                    <div class="blog_card p-3 d-flex">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="card-image">
+                                                    <img src="assets\Images\blog_card_img3.jpeg" alt="Freight Elevator">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="card-content">
+                                                    <h5 class="card-category">ECE Goods / Freight / Cargo Elevators</h5>
+                                                    <h3 class="card-title">Redefining Vertical Mobility for Industrial
+                                                        Buildings
+                                                        and Warehouses</h3>
+                                                    <p class="card-date">NOVEMBER 2, 2023</p>
+                                                    <p class="card-text">
+                                                        Goods elevators, also known as freight elevators or cargo lifts,
+                                                        play a
+                                                        crucial role in various industries, warehouses, and buildings,
+                                                        facilitating the efficient movement of...
+                                                    </p>
+                                                    <a href="#" class="read-more">Read More</a>
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
-                                <div class="col-md-12 mb-3">
-                                    <div class="blog_card p-3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card 4</h5>
-                                            <p class="card-text">This is the fourth card.</p>
+                                <div class="col-lg-12 mb-3">
+                                    <div class="blog_card p-3 d-flex">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="card-image">
+                                                    <img src="assets\Images\blog_card_img4.jpeg" alt="Freight Elevator">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="card-content">
+                                                    <h5 class="card-category">ECE Goods / Freight / Cargo Elevators</h5>
+                                                    <h3 class="card-title">Redefining Vertical Mobility for Industrial
+                                                        Buildings
+                                                        and Warehouses</h3>
+                                                    <p class="card-date">NOVEMBER 2, 2023</p>
+                                                    <p class="card-text">
+                                                        Goods elevators, also known as freight elevators or cargo lifts,
+                                                        play a
+                                                        crucial role in various industries, warehouses, and buildings,
+                                                        facilitating the efficient movement of...
+                                                    </p>
+                                                    <a href="#" class="read-more">Read More</a>
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>
 
                             <!-- Page 2: 1 Card -->
                             <div class="row page" id="page-2">
-                                <div class="col-md-12 mb-3">
-                                    <div class="blog_card p-3">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card 5</h5>
-                                            <p class="card-text">This is the fifth card.</p>
+                                <div class="col-lg-12 mb-3">
+                                    <div class="blog_card p-3 d-flex">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+                                                <div class="card-image">
+                                                    <img src="assets\Images\blog_card_img5.jpeg" alt="Freight Elevator">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8">
+                                                <div class="card-content">
+                                                    <h5 class="card-category">ECE Goods / Freight / Cargo Elevators</h5>
+                                                    <h3 class="card-title">Redefining Vertical Mobility for Industrial
+                                                        Buildings
+                                                        and Warehouses</h3>
+                                                    <p class="card-date">NOVEMBER 2, 2023</p>
+                                                    <p class="card-text">
+                                                        Goods elevators, also known as freight elevators or cargo lifts,
+                                                        play a
+                                                        crucial role in various industries, warehouses, and buildings,
+                                                        facilitating the efficient movement of...
+                                                    </p>
+                                                    <a href="#" class="read-more">Read More</a>
+                                                </div>
+                                            </div>
                                         </div>
+
+
                                     </div>
                                 </div>
                             </div>
@@ -214,11 +453,11 @@
 
                         <!-- Pagination Controls -->
                         <div class="pagination-container">
-                            <button id="prevBtn" class="btn btn-primary me-2" onclick="prevPage()"
+                            <button id="prevBtn" class="next_p_btn me-2" onclick="prevPage()"
                                 style="display: none;">Previous</button>
-                            <button class="btn btn-outline-primary" onclick="changePage(1)">1</button>
-                            <button class="btn btn-outline-primary mx-2" onclick="changePage(2)">2</button>
-                            <button id="nextBtn" class="btn btn-primary ms-2" onclick="nextPage()">Next</button>
+                            <button class="next_p_btn " onclick="changePage(1)">1</button>
+                            <button class="next_p_btn " onclick="changePage(2)">2</button>
+                            <button id="nextBtn" class="next_p_btn ms-2" onclick="nextPage()">Next</button>
                         </div>
                     </div>
                 </div>
@@ -229,7 +468,7 @@
     <footer>
         <div class="container  footer_upper">
             <div class="row">
-                <div class="col-md-2">
+                <div class="col-lg-2">
                     <div class="footer-logo text-center">
                         <img src="assets\Images\ece-logo.png" alt="footer_logo" class="img-fluid">
                     </div>
@@ -242,11 +481,12 @@
                 </div>
                 <div class="col-md-2">
                     <div class="footer_icon">
-                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -254,7 +494,7 @@
 
         <div class="container footer_down">
             <div class="row">
-                <div class="col-md-12 widget">
+                <div class="col-md-3 widget">
                     <h3 class="widget-title">
                         Toll Free Number
                     </h3>
@@ -264,7 +504,7 @@
                         <h3><a href="#">18005320323</a></h3>
                     </div>
                     <div class="footer_button">
-                        <button><a href="">ENQUIRY</a></button>
+                        <button><a href="enquiry_new.php">ENQUIRY</a></button>
                     </div>
                 </div>
                 <div class="col-md-3 widget">
@@ -273,11 +513,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Our History</a></li>
-                            <li><a href="#">Factory</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Blogs</a></li>
+                            <li><a href="company_overview.php">About Us</a></li>
+                            <li><a href="company_overview.php">Our History</a></li>
+                            <li><a href="factory.php">Factory</a></li>
+                            <li><a href="fap.php">FAQs</a></li>
+                            <li><a href="blog.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -287,11 +527,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">Residential</a></li>
-                            <li><a href="#">Commercial</a></li>
-                            <li><a href="#">Hospitals</a></li>
-                            <li><a href="#">Hotel</a></li>
-                            <li><a href="#">Industry</a></li>
+                            <li><a href="credentials.php">Residential</a></li>
+                            <li><a href="credentials.php">Commercial</a></li>
+                            <li><a href="credentials.php">Hospitals</a></li>
+                            <li><a href="credentials.php">Hotel</a></li>
+                            <li><a href="credentials.php">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -301,9 +541,9 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">Enquiry</a></li>
-                            <li><a href="#">Branches</a></li>
-                            <li><a href="#">Smart Customer Connect</a></li>
+                            <li><a href="enquiry_new.php">Enquiry</a></li>
+                            <li><a href="branches.php">Branches</a></li>
+                            <li><a href="smart_technology.php">Smart Customer Connect</a></li>
                             <li><a href="#">Virup Portal</a></li>
 
                         </ul>

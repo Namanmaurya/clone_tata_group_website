@@ -30,63 +30,174 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <style>
+        .s_t_about_section {
+            padding: 50px 0px;
+        }
+
+        .s_t_about_section h3 {
+            color: red;
+            font-size: 18px;
+        }
+
+        .s_t_about_section h2 {
+            color: black;
+        }
+
+        .ttm-horizontal_sep {
+            border-top: 1px solid #ebebeb;
+            display: block;
+            position: relative;
+            margin: 30px 0px;
+        }
+
+        .tic_text {
+            margin: 20px 0px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .tic_text .tic_icon {
+            margin: 0px 30px;
+
+        }
+
+        .tic_text .tic_icon i {
+            color: black;
+            background-color: red;
+            border-radius: 50%;
+            padding: 10px 10px;
+        }
+
+        .tic_text .tic_t {
+            max-width: 200px;
+        }
+
+        .stm_video {
+            padding: 90px 0px;
+        }
+
+        .stm_video h2 {
+            color: black;
+            margin-bottom: 20px;
+        }
+
+
+        .services_st_cards {
+            padding: 60px 0px;
+        }
+
+        .st_card {
+            padding: 0 15px;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.08));
+            background-color: #fff;
+            padding: 30px 30px 30px;
+            position: relative;
+            text-align: left;
+            margin: 20px 0px;
+        }
+
+        .st_card:hover {
+            border-bottom: 4px solid red;
+        }
+
+        .st_card_icon {
+            margin: 5px 0px;
+        }
+
+        /* .st_card::before {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: "";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(194, 225, 245, 0);
+            border-top-color: #fff;
+            border-width: 16px;
+            left: 25px;
+        } */
+
+        /* .ttm-num {
+            position: absolute;
+            top: 110%;
+            height: 38px;
+            width: 38px;
+            border-radius: 50%;
+            background-color: #fff;
+            line-height: 39px;
+            text-align: center;
+            left: 22px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #222d35;
+            font-family: inherit;
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        } */
+
+        /* .ttm-num:before {
+            counter-increment: featuredbox-number;
+            content: counter(featuredbox-number, decimal-leading-zero) " ";
+        } */
+
+        /* Default styles */
+        .responsive-iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+        }
+
+        /* Small devices (up to 576px) */
+        @media (max-width: 576px) {
+            .responsive-iframe {
+                width: 100%;
+                height: 250px;
+            }
+        }
+
+        /* Medium devices (up to 768px) */
+        @media (max-width: 768px) {
+            .responsive-iframe {
+                width: 100%;
+                height: 280px;
+            }
+        }
+
+        /* Large devices (up to 992px) */
+        @media (max-width: 992px) {
+            .responsive-iframe {
+                width: 100%;
+                height: 300px;
+            }
+        }
+
+        /* Extra Large devices (up to 1200px) */
+        @media (max-width: 1200px) {
+            .responsive-iframe {
+                width: 100%;
+                height: 315px;
+            }
+        }
+
+
+        @media (max-width: 426px) {
+            .s_t_about_section {
+                padding: 0px 0px;
+            }
+
+            .s_t_about_section h2 {
+                font-size: 40px;
+                line-height: 50px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-
-    <!-- Fullscreen Model Section -->
-    <div class="model" id="model">
-        <div class="close-btn" onclick="closeModel()"><i class="fa-solid fa-xmark"></i></div>
-
-        <div class="row">
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h3>Request A Free <br>Consultation</h3>
-                    <p>
-                        Our expert assesses your space, discusses your requirements, and provides recommendations
-                        tailored to your needs.
-                    </p>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" class="styled-input" id="name" name="name" placeholder="Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="styled-input" id="email" name="email" placeholder="Email"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" class="styled-input" id="phone" name="phone" placeholder="Phone" required>
-                        </div>
-                        <div class="form-group">
-                            <select class="styled-input" id="city" name="city" required>
-                                <option value="">Please select location</option>
-                                <option value="Delhi">Delhi</option>
-                                <option value="Mumbai">Mumbai</option>
-                                <option value="Bengaluru">Bengaluru</option>
-                                <option value="Kolkata">Kolkata</option>
-                                <option value="Chennai">Chennai</option>
-                                <option value="Hyderabad">Hyderabad</option>
-                                <option value="Pune">Pune</option>
-                                <option value="Ahmedabad">Ahmedabad</option>
-                                <option value="Jaipur">Jaipur</option>
-                                <option value="Chandigarh">Chandigarh</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="button">SUBMIT NOW</button>
-                    </form>
-                    
-                    <div id="formMessage" class="text-center text-danger mt-3"></div>
-                </div>
-
-            </div>
-            <div class="col-md-4">
-                <div class="modelimg">
-                    <img src="assets\Images\model_img.jpg" alt="model_img" class="img-fluid">
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-navbar">
@@ -201,293 +312,233 @@
             </div>
         </div>
 
-        <!-- hero section -->
-        <section class="herosection">
+        <section class="s_t_about_section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-
-                        <div class="headingwbg">
-                            <h1 class="text-center">SMART Elevators - <b>SMART Technology</b></h1>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="service_img">
-                    <img src="assets\Images\service-shape1.png" alt="Service image">
-                </div>
-            </div>
-        </section>
-
-
-        <!-- card section -->
-        <section class="card_section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="p_text text-center">Internet of Things (IoT) & Artificial Intelligence (AI) with Cloud
-                            Server for Real-Time communication, health monitoring, and SMART diagnostics. ECE Elevators
-                            is the FIRST in the country to offer this advanced capability as a Standard Feature in our
-                            SMART Elevators.</p>
-                        <div class="row">
-                            <div class="col-md-4 ">
-                                <div class="card">
-                                    <h4>Redefining Elevator Management</h4>
-                                    <ul>
-                                        <li>Group Elevator Management System (GEM)</li>
-                                        <li>Advanced Analytics by (Artificial Intelligence) AI and Remote Diagnostic.
-                                        </li>
-                                        <li>Web based Elevator View Intelligence</li>
-                                        <li>Elevator Behavioural Insights</li>
-                                    </ul>
-                                </div>
-
-                            </div>
-                            <div class="col-md-4 ">
-                                <div class="card">
-                                    <h4>Digital Elevator Access & Usage</h4>
-                                    <ul>
-                                        <li>Touchless QR based operations</li>
-                                        <li>Improved Elevator Uptime</li>
-                                        <li>Improved Response Times</li>
-                                        <li>Enhanced Safety and Peace of mind</li>
-                                        <li>Total Transparency in Elevator Operation</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-4 gap-4">
-                                <div class="card">
-                                    <h4>Smart Customer Interface</h4>
-                                    <ul>
-                                        <li>Improved Elevator Uptime Availability</li>
-                                        <li>Improved Facility Management.</li>
-                                        <li>Real Time Notifications and Error Logs: with GEM contracts</li>
-                                        <li>Total Transparency in Elevator Operation and Client Interactions.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="col-md-12 text-center">
+                        <h3>About Us</h3>
+                        <h2>Smart Elevator.<b> Smart Technology</b></h2>
+                        <p>Welcome to the world of <b>smart elevators</b> based on <b>smart technology</b> that
+                            originated in India. The focal point of all technological development at <b>ECE
+                                Elevators</b> is the end-user. Safety, Reliability & Aesthetics are the foundations on
+                            which our elevators are built. As part of Birla Group, we take immense pride in being the
+                            most trusted and the <b>best brand of elevators</b> catering to requirements of all lifts
+                            ranging from
+                            <b>Hospital Elevators, Residential Elevators, Commercial & Industrial Elevators, Office
+                                Elevators, and Automobile Elevators.</b> From low rise to high rise lifts requirements,
+                            we are best suited to deliver customized and tailormade elevator solutions.
+                        </p>
+                        <p>Our <b>SMART ELEVATORS</b> have advanced SMART self-diagnostic capability and it communicates
+                            on a real-time basis with the cloud for seamless remote monitoring and thus we get to know
+                            online the health of your elevator. The <b>SMART ELEVATORS</b> also enables touchless
+                            operations and a smart controller. You can also monitor all your elevators from a
+                            centralized location with our group elevator monitoring system and the users no longer need
+                            to press the button, they can use lifts through their phone – a truly <b>touchless
+                                operation.</b></p>
+                        <p>With our Pan India Presence, <b>world-class service</b> is part of our standard offerings.
+                            When you choose <b>ECE Lifts</b> , you choose a smart elevator experience made for India and
+                            in India. The <b>Products and Technology</b> based on Smart Features ECE Elevators is rated
+                            among the <b> top 10 best elevator companies in India.</b></p>
 
 
-
-            </div>
-        </section>
-
-
-        <!-- Video_Section -->
-        <section class="smart-elevator">
-            <div class="container">
-                <h2>SMART <strong>Elevators</strong> at work</h2>
-
-                <div class="video-container">
-                    <video controls muted autoplay loop>
-                        <source src="./assets/video/aa.mp4" type="video/mp4">
-
-                    </video>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title">
-                            <h2>
-                                ECE <b>Advantage</b>
-                            </h2>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="sub_card">
-                                <h3>
-                                    Advance SMART Digital Technology
-                                </h3>
-                            </div>
-                        </a>
-
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="sub_card">
-                                <h3>
-                                    Pan India Presence
-                                </h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="sub_card">
-                                <h3>
-                                    People, Process and Culture
-                                </h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="sub_card">
-                                <h3>
-                                    Enhanced Safety and Peace of Mind
-                                </h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="sub_card">
-                                <h3>
-                                    Customer Centric Approach
-                                </h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="">
-                            <div class="sub_card">
-                                <h3>
-                                    Make In India Built for Sustainability
-                                </h3>
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>
+            <div class="ttm-horizontal_sep">
+            </div>
         </section>
 
-        <!-- Preseident Section -->
-        <section class="president">
+        <section class="enquiry_form">
             <div class="container">
-                <div class="president_card">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="president_card_img ">
-                                <img src="assets\Images\manish_sikka.jpg" alt="img" class="img-fluid">
-                                <a href="#">
-                                    <div class="play-button">
-                                        <i class="fa fa-play"></i>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="enquiry_text">
+                            <h2> Enquiry <b>Form</b></h2>
+                            <p>For fresh enquiry kindly contact below</p>
+
+                            <form>
+                                <div class="row custom-row">
+                                    <div class="col-md-4 custom-col ">
+                                        <span class="text-input">
+                                            <input type="text" class="form-control" placeholder="Name" required>
+                                        </span>
+
                                     </div>
-                                </a>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input">
+                                            <input type="email" class="form-control" placeholder="Email" required>
+                                        </span>
 
-                            </div>
-                        </div>
-                        <div class="col-md-8">
-                            <div class="president_card_text">
-                                <h2>Manish Sikka </h2>
-                                <h4> President - ECE Elevator</h4>
-                                <p>Mr. Manish Sikka, President - Elevator Division, ECE Industries Ltd, (A Birla Group
-                                    Co.) shares his views and plans for the future in its 75th year of operations.
-                                    Further more he also discusses plans to step up quality, technology upgradation and
-                                    innovation and deliver world class products. </p>
-                            </div>
+                                    </div>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input">
+                                            <input type="tel" name="contact" placeholder="Phone number"
+                                                class="form-control" pattern="\d{10}" maxlength="10" required
+                                                title="please enter a valid 10-digit contact number"
+                                                oninput="this.value= this.value.replace(/[^0-9]/g, '');">
+                                        </span>
+
+                                    </div>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input">
+                                            <input type="text" class="form-control"
+                                                placeholder="Company Name (Optional)">
+
+                                        </span>
+
+                                    </div>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input"> <input type="text" class="form-control"
+                                                placeholder="Subject" required></span>
+
+                                    </div>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input"><input type="text" class="form-control"
+                                                placeholder="Street Address" required></span>
+
+                                    </div>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input"> <input type="text" class="form-control"
+                                                placeholder="City" required></span>
+
+                                    </div>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input"><input type="text" class="form-control"
+                                                placeholder="State" required></span>
+
+                                    </div>
+                                    <div class="col-md-4 custom-col">
+                                        <span class="text-input">
+                                            <input type="tel" name="contact" placeholder="Zip" class="form-control"
+                                                pattern="[0-9]{6}" maxlength="6" required
+                                                title="Please enter a valid 6-digit number"
+                                                oninput="this.value = this.value.replace(/\D/g, '').slice(0,6);">
+                                        </span>
+
+                                    </div>
+                                    <div class="col-md-12 custom-full-width ">
+                                        <span class="text-input"> <textarea class="form-control" rows="4"
+                                                placeholder="Message" required></textarea></span>
+
+                                    </div>
+
+                                    <div class="form-check ">
+                                        <input class="form-check-input" type="checkbox" id="robotCheck" required>
+                                        <label class="form-check-label" for="robotCheck">
+                                            I'm not a robot
+                                        </label>
+                                        <div class="robot_img">
+                                            <img src="assets\Images\not_robot_img.png" alt="image">
+                                            <p>reCAPTCHA</p>
+                                            <p><a href="">Privacy</a> -<a href="">Term</a></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="footer_button btn_m">
+                                    <button type="submit">SUBMIT</button>
+                                </div>
+
+
+                            </form>
+
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Key_Variable_section -->
-        <section class="key_variable">
+        <section class="s_t_about_section">
             <div class="container">
-                <h2 class="text-center">Key <b> Verticals</b></h2>
-                <p class="text-center">ECE Elevators cater to all segments and are accordingly designed with specific
-                    parameters. From old and restored buildings to the brand new technologically advanced high rise
-                    structures – the solutions are meticulously designed and are user friendly.</p>
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="card_w_i">
-                            <div class="icon">
+                    <div class="col-md-12 text-center">
+                        <h3>ECE Advantage</h3>
+                        <h2>Reason to<b> Choose us</b></h2>
+                        <p>We’ve been established as a family furnishers business for over 60 years. With a beautiful
+                            showroom in Kolkata, out friendly staff pride themselves in providing a high level of
+                            service.</p>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>Touchless QR Based Operations</h5>
+                                    </div>
+                                </div>
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>Group Elevator Monitoring</h5>
+                                    </div>
+                                </div>
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>Improved Elevator Uptime</h5>
+                                    </div>
+                                </div>
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>Weak Battery Alarm</h5>
+                                    </div>
+                                </div>
+
 
                             </div>
-                            <h5>
-                                Office/Commercial <br> Elevators
-                            </h5>
-                            <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card_w_i">
-                            <div class="icon1">
+                            <div class="col-md-6">
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>Enhanced Saftey and Peace of Mind</h5>
+                                    </div>
+                                </div>
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>Smart Elevator Operations</h5>
+                                    </div>
+                                </div>
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>Improved Response Time</h5>
+                                    </div>
+                                </div>
+                                <div class="tic_text">
+                                    <div class="tic_icon">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                    <div class="tic_t">
+                                        <h5>PAN India Presence</h5>
+                                    </div>
+                                </div>
+
 
                             </div>
-                            <h5>
-                                Residential / Home <br> Elevators
-                            </h5>
-                            <p>Convenience at your doorstep.</p>
-                            <a href="#">READ MORE!</a>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card_w_i">
-                            <div class="icon2">
-
-                            </div>
-                            <h5>
-                                Hospitel Elevators
-                            </h5>
-                            <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card_w_i">
-                            <div class="icon">
-
-                            </div>
-                            <h5>
-                                Office/Commercial <br> Elevators
-                            </h5>
-                            <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card_w_i">
-                            <div class="icon1">
-
-                            </div>
-                            <h5>
-                                Residential / Home <br> Elevators
-                            </h5>
-                            <p>Convenience at your doorstep.</p>
-                            <a href="#">READ MORE!</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card_w_i">
-                            <div class="icon2">
-
-                            </div>
-                            <h5>
-                                Hospitel Elevators
-                            </h5>
-                            <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card_w_i">
-                            <div class="icon1">
-
-                            </div>
-                            <h5>
-                                Residential / Home <br> Elevators
-                            </h5>
-                            <p>Convenience at your doorstep.</p>
-                            <a href="#">READ MORE!</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
 
                     </div>
                 </div>
             </div>
         </section>
+
         <!-- Card_slider_section -->
         <section class="slider">
             <div class="slider-container">
@@ -623,6 +674,111 @@
             </div>
         </section>
 
+        <section class="stm_video">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2>ECE Elevators -<b>A Journey Through Time</b> </h2>
+                        <iframe class="responsive-iframe"
+                            src="https://www.youtube.com/embed/tyk0pdnzzwc?si=hIlA6QRS--_HFWxU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                        </iframe>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services_st_cards">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ser_heading text-center">
+                            <h2>Our <b>Services</b></h2>
+                        </div>
+                        <div class="ser_pra_text text-center">
+                            <p>No matter what the requirement ECE Elevators caters to all segments and are designed with
+                                specific parameters needed by the industry. Old and restored buildings to the brand new
+                                technologically advanced structures. ECE Elevators covers the entire spectrum and
+                                provides thoughtfully designed and consumer friendly solutions.</p>
+                        </div>
+
+                        <div class="ser_st_cards">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="st_card">
+                                        <i class="ttm-num ti-info"></i>
+                                        <div class="st_card_icon">
+                                            <img src="assets\Images\corporation_sev_img.png" alt="icon"
+                                                class="img-flued">
+                                        </div>
+                                        <h5>Office/Commercial Elevators</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="st_card">
+                                        <i class="ttm-num ti-info"></i>
+                                        <div class="st_card_icon">
+                                            <img src="assets\Images\hotel_sev_img.png" alt="icon" class="img-flued">
+                                        </div>
+                                        <h5>Residential/Home Elevators</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="st_card">
+                                        <i class="ttm-num ti-info"></i>
+                                        <div class="st_card_icon">
+                                            <img src="assets\Images\hospital_sev_img.png" alt="icon" class="img-flued">
+                                        </div>
+                                        <h5>Hospital Elevators</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="st_card">
+                                        <i class="ttm-num ti-info"></i>
+                                        <div class="st_card_icon">
+                                            <img src="assets\Images\hotel_sev_img.png" alt="icon" class="img-flued">
+                                        </div>
+                                        <h5>Hotel Elevator</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="st_card">
+                                        <i class="ttm-num ti-info"></i>
+                                        <div class="st_card_icon">
+                                            <img src="assets\Images\factory_ser_img.png" alt="icon" class="img-flued">
+                                        </div>
+                                        <h5>Industrial Elevators</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="st_card">
+                                        <i class="ttm-num ti-info"></i>
+                                        <div class="st_card_icon">
+                                            <img src="assets\Images\lift_ser_img.png" alt="icon" class="img-flued">
+                                        </div>
+                                        <h5>Escalators</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="st_card">
+                                        <i class="ttm-num ti-info"></i>
+                                        <div class="st_card_icon">
+                                            <img src="assets\Images\car-dealer_ser_img.png" alt="icon"
+                                                class="img-flued">
+                                        </div>
+                                        <h5>Automobile Elevators</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Our Clients Section -->
 
@@ -746,171 +902,9 @@
             <button class="btn btn-danger mt-3" onclick="nextSlide()"> <i class="fas fa-arrow-right"></i></button>
         </section>
 
-        <!-- Social Presence Section -->
-
-        <section class="social_presence ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="text-center">
-                            Social <b>Presence</b>
-                        </h2>
-                        <div class="social_icons">
-                            <div class="icon">
-                                <a href="https://www.facebook.com/" class="icon facebook"><i
-                                        class="fa-brands fa-facebook-f"></i></a>
-                                <div class="icon_name">
-                                    <p>Facebook</p>
-                                </div>
-
-                            </div>
-                            <div class="icon">
-                                <a href="https://x.com/i/flow/login" class="icon twitter"><i
-                                        class="fa-brands fa-twitter"></i></a>
-                                <div class="icon_name">
-                                    <p>Twitter</p>
-                                </div>
-
-                            </div>
-                            <div class="icon">
-                                <a href="https://www.instagram.com/accounts/login/?hl=en" class="icon instagram"><i
-                                        class="fa-brands fa-instagram"></i></a>
-                                <div class="icon_name">
-                                    <p>Instagram</p>
-                                </div>
-
-                            </div>
-                            <div class="icon">
-                                <a href="https://www.linkedin.com/login/in" class="icon linkedin"> <i
-                                        class="fa-brands fa-linkedin"></i></a>
-                                <div class="icon_name">
-                                    <p>Linkedin</p>
-                                </div>
-
-                            </div>
-                            <div class="icon">
-                                <a href="https://www.youtube.com/" class="icon youtube"><i
-                                        class="fa-brands fa-youtube"></i></a>
-                                <div class="icon_name">
-                                    <p>Youtube</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
-        <!-- Testimonials Section -->
 
-        <section class="container-flued testimonia_Section">
-            <h2 class="text-center"> <b>Testimonials</b></h2>
-            <div class="container testimonial-wrapper">
-                <div class="testimonial-carousel " id="carousel">
-                    <div class="testimonial-card ">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">Excellent services and work. Services are very good In Shalby
-                                    Hospital Jaipur by ECE Elevators team and thanks for full support.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Deepak,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">We have been associated with ECE for last 3 years and our
-                                    experience has been great. All the elevators are equipped with smart features to
-                                    tackle any problem.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Rajendra Sharma,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">Sincere appreciation for your seamless services, accountability,
-                                    and dedication. Your remarkable customer service and ability to handle critical
-                                    issue has strengthened our relationship. We hope to continue for a longer period of
-                                    time
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Arjun Rathore,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">The service provided by ECE team is excellent at our premises JKJ
-                                    Jewellers, near Satkar Shopping Center, Malviya Nagar, Jaipur. Appreciate your team
-                                    work, thank you.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Juhi Rama (Corporate HR & Admin),</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">The service provided by ECE team is excellent at our premises JKJ
-                                    Jewellers, near
-                                    Satkar Shopping Center, Malviya Nagar, Jaipur. Appreciate your team work, thank you.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Deepak,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center testimonial-controls">
-                <button onclick="prevSlide()"><i class="fas fa-arrow-left"></i></button>
-                <button onclick="nextSlide()"><i class="fas fa-arrow-right"></i></button>
-            </div>
-        </section>
 
     </main>
 

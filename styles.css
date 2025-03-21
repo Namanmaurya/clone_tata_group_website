@@ -340,6 +340,7 @@ h5 {
 .dot.active {
     background-color: #c9c9c9;
 }
+
 /* slide show end */
 
 .herosection {
@@ -1332,14 +1333,13 @@ h5 {
 
 
 form {
-    padding: 60px 20px;
+    padding: 20px 20px;
 }
 
 
 .text-input input,
 .text-input textarea {
     width: 100%;
-    border-radius: 5px;
     border: 1px solid #ced4da;
     padding: 10px;
     font-size: 16px;
@@ -1440,14 +1440,14 @@ form {
     text-decoration: underline;
 }
 
-.btn_m{
+.btn_m {
     margin-left: 450px;
 }
 
 
 /* login Page */
 
-.login{
+.login {
     margin-top: 170px;
 }
 
@@ -1457,17 +1457,19 @@ form {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 .login-btn {
     background-color: #d9534f;
     color: white;
     border: none;
 }
+
 .login-btn:hover {
     background-color: #c9302c;
 }
 
 
-.login-container h2{
+.login-container h2 {
     font-size: 40px;
     line-height: 34px;
     font-family: 'Poppins', sans-serif;
@@ -1490,6 +1492,7 @@ form {
     .footer_text {
         margin: 35px 0px 0px 100px;
     }
+
     .btn_m {
         margin-left: 330px;
     }
@@ -1675,7 +1678,7 @@ form {
         margin: 10px 0px 0px 140px;
     }
 
-    .testimonia_Section{
+    .testimonia_Section {
         display: none;
     }
 
@@ -1712,6 +1715,9 @@ form {
         font-size: 0.9rem;
     }
 
+    .widget {
+        padding: 0px 50px 10px !important;
+    }
 }
 
 
@@ -1806,12 +1812,15 @@ form {
     .enquiry_form {
         padding: 30px 0px;
     }
+
     .hero_section {
         margin-top: 95px;
     }
+
     .login {
         margin-top: 100px;
     }
+
 }
 
 @media(max-width: 376px) {
@@ -1890,8 +1899,13 @@ form {
     .btn_m {
         margin-left: 30px;
     }
+
     .login {
         margin-top: 90px;
+    }
+
+    .enquiry_text {
+        padding: 40px 15px;
     }
 
 }

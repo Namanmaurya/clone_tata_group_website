@@ -270,6 +270,14 @@
             .exp_i_d i {
                 font-size: 60px;
             }
+
+            .com_video {
+                margin-top: 125px !important;
+            }
+
+            .text_box {
+                padding: 20px 0px;
+            }
         }
 
         @media (max-width:426px) {
@@ -353,8 +361,8 @@
         </div>
     </nav>
 
-   <!-- Side Navigation Menu -->
-   <div id="sideNav" class="sidenav">
+    <!-- Side Navigation Menu -->
+    <div id="sideNav" class="sidenav">
         <button class="close-btn" onclick="toggleSideNav()"><i class="fa-solid fa-xmark"></i></button>
         <ul>
             <li><a href="index.php">Home</a></li>
@@ -380,10 +388,10 @@
                 </div>
             </li>
             <li>
-                <a href="#">SMART Technology</a>
+                <a href="smart_technology.php">SMART Technology</a>
             </li>
             <li>
-                <a href="#">Career</a>
+                <a href="career.php">Career</a>
             </li>
             <li>
                 <a href="blog.php">Blogs</a>
@@ -651,11 +659,12 @@
                 </div>
                 <div class="col-md-2">
                     <div class="footer_icon">
-                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href=""><i class="fa-brands fa-twitter"></i></a>
-                        <a href=""> <i class="fa-brands fa-instagram"></i></a>
-                        <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                        <a href=""><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -673,7 +682,7 @@
                         <h3><a href="#">18005320323</a></h3>
                     </div>
                     <div class="footer_button">
-                        <button><a href="">ENQUIRY</a></button>
+                        <button><a href="enquiry_new.php">ENQUIRY</a></button>
                     </div>
                 </div>
                 <div class="col-md-3 widget">
@@ -682,11 +691,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Our History</a></li>
-                            <li><a href="#">Factory</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Blogs</a></li>
+                            <li><a href="company_overview.php">About Us</a></li>
+                            <li><a href="company_overview.php">Our History</a></li>
+                            <li><a href="factory.php">Factory</a></li>
+                            <li><a href="fap.php">FAQs</a></li>
+                            <li><a href="blog.php">Blogs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -696,11 +705,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">Residential</a></li>
-                            <li><a href="#">Commercial</a></li>
-                            <li><a href="#">Hospitals</a></li>
-                            <li><a href="#">Hotel</a></li>
-                            <li><a href="#">Industry</a></li>
+                            <li><a href="credentials.php">Residential</a></li>
+                            <li><a href="credentials.php">Commercial</a></li>
+                            <li><a href="credentials.php">Hospitals</a></li>
+                            <li><a href="credentials.php">Hotel</a></li>
+                            <li><a href="credentials.php">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -710,9 +719,9 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="#">Enquiry</a></li>
-                            <li><a href="#">Branches</a></li>
-                            <li><a href="#">Smart Customer Connect</a></li>
+                            <li><a href="enquiry_new.php">Enquiry</a></li>
+                            <li><a href="branches.php">Branches</a></li>
+                            <li><a href="smart_technology.php">Smart Customer Connect</a></li>
                             <li><a href="#">Virup Portal</a></li>
 
                         </ul>
