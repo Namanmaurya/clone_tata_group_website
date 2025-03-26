@@ -1,3 +1,48 @@
+<?php
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'enquiry_now_db';
+
+$con = mysqli_connect($hostname, $username, $password, $dbname);
+
+if (!$con) {
+    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['contact'];
+    $position = $_POST['position'];
+    $select_city = $_POST['select_city'];
+    $department = $_POST['department'];
+    $massage = $_POST['massage'];
+    $file_path = "file";
+    if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
+        $upload_dir = "uploads/";
+        if (!is_dir($upload_dir)) {
+            mkdir($upload_dir, 0777, true);
+        }
+        
+        $file_name = basename($_FILES['file']['name']);
+        $file_path = $upload_dir . time() . "_" . $file_name;
+        move_uploaded_file($_FILES['file']['tmp_name'], $file_path);
+    }
+
+
+
+    $sql = "INSERT INTO `career_page_form`(`name`, `email`, `phone_number`, `position`, `select_city`, `department`, `massage`, `file`) VALUES ('$name','$email','$phone_number','$position','$select_city','$department','$massage','$file_path')";
+
+    if (mysqli_query($con, $sql)) {
+        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
+    }
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +75,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         .dot-container {
@@ -201,7 +249,7 @@
             padding-right: -1px;
         }
 
-        .form-check{
+        .form-check {
             margin-left: 15px !important;
         }
 
@@ -228,8 +276,8 @@
             }
         }
 
-        @media(max-width: 321px){
-            .job_s_card{
+        @media(max-width: 321px) {
+            .job_s_card {
                 padding: 20px 10px;
             }
         }
@@ -271,7 +319,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -282,7 +330,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -304,7 +352,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Contact us</a>
+                    <a href="#" class="dropdown-toggle">Contact us</a>
                     <ul class="dropdown-menu">
                         <li><a href="enquiry_new.php">Enquiry</a></li>
                         <li><a href="branches.php">Branches</a></li>
@@ -514,7 +562,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -539,7 +587,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -564,7 +612,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -589,7 +637,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -614,7 +662,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -639,7 +687,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -664,7 +712,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -689,7 +737,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -714,7 +762,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -739,7 +787,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -764,7 +812,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -789,7 +837,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -814,7 +862,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -839,7 +887,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -864,7 +912,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -889,7 +937,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -914,7 +962,7 @@
 
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Apply</button>
                                 </div>
 
 
@@ -943,17 +991,17 @@
                     <div class="col-md-12">
                         <div class="enquiry_text">
                             <h2> Upload Your <b> Resume</b></h2>
-                            <form>
+                            <form id="career_form">
                                 <div class="row custom-row">
                                     <div class="col-md-6 custom-col ">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Name" required>
+                                            <input type="text" class="form-control" placeholder="Name" name="name" required>
                                         </span>
 
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <input type="email" class="form-control" placeholder="Email" required>
+                                            <input type="email" class="form-control" placeholder="Email" name="email" required>
                                         </span>
 
                                     </div>
@@ -968,14 +1016,14 @@
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Position">
+                                            <input type="text" class="form-control" placeholder="Position" name="position">
 
                                         </span>
 
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <select class="form-control option_s" required>
+                                            <select class="form-control option_s"  name="select_city"required>
                                                 <option value="" disabled selected>Select a City</option>
                                                 <option value="mumbai">Mumbai</option>
                                                 <option value="delhi">Delhi</option>
@@ -992,7 +1040,7 @@
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <select class="form-control option_s" required>
+                                            <select class="form-control option_s"  name="department"required>
                                                 <option value="" disabled selected>Department</option>
                                                 <option value="mumbai">Accourits </option>
                                                 <option value="delhi">Administration </option>
@@ -1019,13 +1067,13 @@
 
                                     <div class="col-md-12 custom-full-width1 ">
                                         <span class="text-input"> <textarea class="form-control" rows="4"
-                                                placeholder="Message" required></textarea></span>
+                                                placeholder="Message" name="massage" required></textarea></span>
 
                                     </div>
 
                                     <div class="col-md-12 custom-full-width1">
                                         <span class="text-input">
-                                            <input type="file" class="form-control mt-2" name="fileInput" required>
+                                            <input type="file" class="form-control mt-2" name="fileInput" name="file" required>
                                         </span>
 
                                     </div>
@@ -1045,7 +1093,7 @@
                                 </div>
 
                                 <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
+                                    <button type="submit">Submit</button>
                                 </div>
 
 
@@ -1115,7 +1163,7 @@
 
         <!-- Testimonials Section -->
 
-        <section class="container-flued testimonia_Section">
+        <!-- <section class="container-flued testimonia_Section">
             <h2 class="text-center"> <b>Testimonials</b></h2>
             <div class="container testimonial-wrapper">
                 <div class="testimonial-carousel " id="carousel">
@@ -1221,7 +1269,7 @@
                 <button onclick="prevSlide()"><i class="fas fa-arrow-left"></i></button>
                 <button onclick="nextSlide()"><i class="fas fa-arrow-right"></i></button>
             </div>
-        </section>
+        </section> -->
 
     </main>
 
@@ -1333,6 +1381,39 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#career_form").submit(function (event) {
+                event.preventDefault(); // Prevent page reload
+
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: "", // Same PHP file
+                    type: "POST",
+                    data: $(this).serialize(), // Serialize form data
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status === "success") {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success!",
+                                text: response.message,
+                            });
+                            $("#career_form")[0].reset(); // Reset form
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops!",
+                                text: response.message,
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 

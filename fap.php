@@ -1,3 +1,37 @@
+<?php
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'enquiry_now_db';
+
+$con = mysqli_connect($hostname, $username, $password, $dbname);
+
+if (!$con) {
+    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['contact'];
+    $company_name = $_POST['companyname'];
+    $subject = $_POST['subject'];
+    $street_address = $_POST['street_address'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $massage = $_POST['massage'];
+
+    $sql = "INSERT INTO `faq`(`name`, `email`, `phone_number`, `company_name`, `subject`, `street_address`, `city`, `state`, `zip`, `massage`) VALUES ('$name ','$email','$phone_number','$company_name','$subject','$street_address','$city','$state','$zip','$massage')";
+
+    if (mysqli_query($con, $sql)) {
+        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
+    }
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +64,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         .faq_tittle {
@@ -131,9 +168,6 @@
         .enquiry_form .enquiry_text {
             background-color: white;
         }
-
-       
-
     </style>
 </head>
 
@@ -172,7 +206,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -183,7 +217,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -205,7 +239,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Contact us</a>
+                    <a href="#" class="dropdown-toggle">Contact us</a>
                     <ul class="dropdown-menu">
                         <li><a href="enquiry_new.php">Enquiry</a></li>
                         <li><a href="branches.php">Branches</a></li>
@@ -217,7 +251,6 @@
 
 
     </div>
-
     <main>
 
         <!-- Slideshow -->
@@ -584,17 +617,19 @@
                         <div class="enquiry_text">
                             <h2> Book a FREE consultation/site inspection</h2>
 
-                            <form>
+                            <form id="enquiryForm">
                                 <div class="row custom-row">
                                     <div class="col-md-4 custom-col ">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Name" required>
+                                            <input type="text" class="form-control" name="name" placeholder="Name"
+                                                required>
                                         </span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="email" class="form-control" placeholder="Email" required>
+                                            <input type="email" class="form-control" name="email" placeholder="Email"
+                                                required>
                                         </span>
 
                                     </div>
@@ -609,43 +644,43 @@
                                     </div>
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="text" class="form-control"
+                                            <input type="text" name="companyname" class="form-control"
                                                 placeholder="Company Name (Optional)">
 
                                         </span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"> <input type="text" class="form-control"
+                                        <span class="text-input"> <input type="text" name="subject" class="form-control"
                                                 placeholder="Subject" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"><input type="text" class="form-control"
-                                                placeholder="Street Address" required></span>
+                                        <span class="text-input"><input type="text" name="street_address"
+                                                class="form-control" placeholder="Street Address" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"> <input type="text" class="form-control"
+                                        <span class="text-input"> <input type="text" name="city" class="form-control"
                                                 placeholder="City" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"><input type="text" class="form-control"
+                                        <span class="text-input"><input type="text" name="state" class="form-control"
                                                 placeholder="State" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="tel" name="contact" placeholder="Zip"
-                                                class="form-control" pattern="[0-9]{6}" maxlength="6" required
+                                            <input type="tel" name="zip" placeholder="Zip" class="form-control"
+                                                pattern="[0-9]{6}" maxlength="6" required
                                                 title="Please enter a valid 6-digit number"
                                                 oninput="this.value = this.value.replace(/\D/g, '').slice(0,6);">
                                         </span>
 
                                     </div>
                                     <div class="col-md-12 custom-full-width ">
-                                        <span class="text-input"> <textarea class="form-control" rows="4"
+                                        <span class="text-input"> <textarea class="form-control" name="massage" rows="4"
                                                 placeholder="Message" required></textarea></span>
 
                                     </div>
@@ -675,135 +710,6 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-
-
-
-
-
-
-
-        <!-- Our Clients Section -->
-
-        <section class=" our_clients_section container-flued my-5 text-center">
-            <h2>Our <b>Clients</b></h2>
-            <div class="client-container">
-                <div class="client-slide" id="clientSlide">
-                    <div class="client"><img src="assets\Images\NTPC.png" alt="Client 1">
-                        <div class="client-name">
-                            <p>NTPC</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\chettinad.png" alt="Client 2">
-                        <div class="client-name">
-                            <p>Chettinad</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\ctrls.png" alt="Client 3">
-                        <div class="client-name">
-                            <p>ctrls</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\HB.png" alt="Client 4">
-                        <div class="client-name">
-                            <p>HB</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\oxirich.png" alt="Client 5">
-                        <div class="client-name">
-                            <p>Oxirich</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\SAIL.png" alt="Client 6">
-                        <div class="client-name">
-                            <p>Sail</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\renaissance.png" alt="Client 7">
-                        <div class="client-name">
-                            <p>Remaissance</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\tata.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Tata</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\ultratech.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Ultratech</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\unitech.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Unitech</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\vatika.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Vatika</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\NTPC.png" alt="Client 1">
-                        <div class="client-name">
-                            <p>NTPC</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\chettinad.png" alt="Client 2">
-                        <div class="client-name">
-                            <p>Chettinad</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\ctrls.png" alt="Client 3">
-                        <div class="client-name">
-                            <p>ctrls</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\HB.png" alt="Client 4">
-                        <div class="client-name">
-                            <p>HB</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\oxirich.png" alt="Client 5">
-                        <div class="client-name">
-                            <p>Oxirich</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\SAIL.png" alt="Client 6">
-                        <div class="client-name">
-                            <p>Sail</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\renaissance.png" alt="Client 7">
-                        <div class="client-name">
-                            <p>Renaissance</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\tata.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Tata</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\ultratech.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Ultratech</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\unitech.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Unitech</p>
-                        </div>
-                    </div>
-                    <div class="client"><img src="assets\Images\vatika.png" alt="Client 8">
-                        <div class="client-name">
-                            <p>Vatika</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="btn btn-danger mt-3" onclick="prevSlide()"><i class="fas fa-arrow-left"></i> </button>
-            <button class="btn btn-danger mt-3" onclick="nextSlide()"> <i class="fas fa-arrow-right"></i></button>
         </section>
 
         <!-- Social Presence Section -->
@@ -862,115 +768,6 @@
         </section>
 
 
-        <!-- Testimonials Section -->
-
-        <section class="container-flued testimonia_Section">
-            <h2 class="text-center"> <b>Testimonials</b></h2>
-            <div class="container testimonial-wrapper">
-                <div class="testimonial-carousel " id="carousel">
-                    <div class="testimonial-card ">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">Excellent services and work. Services are very good In Shalby
-                                    Hospital Jaipur by ECE Elevators team and thanks for full support.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Deepak,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">We have been associated with ECE for last 3 years and our
-                                    experience has been great. All the elevators are equipped with smart features to
-                                    tackle any problem.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Rajendra Sharma,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">Sincere appreciation for your seamless services, accountability,
-                                    and dedication. Your remarkable customer service and ability to handle critical
-                                    issue has strengthened our relationship. We hope to continue for a longer period of
-                                    time
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Arjun Rathore,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">The service provided by ECE team is excellent at our premises JKJ
-                                    Jewellers, near Satkar Shopping Center, Malviya Nagar, Jaipur. Appreciate your team
-                                    work, thank you.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="img">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Juhi Rama (Corporate HR & Admin),</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="t_card_part1">
-                            <div class="t_card_part_S">
-                                <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">The service provided by ECE team is excellent at our premises JKJ
-                                    Jewellers, near
-                                    Satkar Shopping Center, Malviya Nagar, Jaipur. Appreciate your team work, thank you.
-                                </p>
-
-                            </div>
-                        </div>
-                        <div class="t_card_img">
-                            <img src="assets\Images\testimonial_user_img.png" alt="">
-                        </div>
-                        <div class="t_card_part3">
-                            <h5>Mr. Deepak,</h5>
-                            <p>Owner, JKJ Jewellers</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center testimonial-controls">
-                <button onclick="prevSlide()"><i class="fas fa-arrow-left"></i></button>
-                <button onclick="nextSlide()"><i class="fas fa-arrow-right"></i></button>
-            </div>
-        </section>
 
     </main>
 
@@ -992,7 +789,8 @@
                     <div class="footer_icon">
                         <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
@@ -1110,6 +908,37 @@
         }
 
     </script>
+    <script>
+        $(document).ready(function () {
+            $("#enquiryForm").submit(function (event) {
+                event.preventDefault(); // Prevent page reload
+
+                $.ajax({
+                    url: "", // Same PHP file
+                    type: "POST",
+                    data: $(this).serialize(), // Serialize form data
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status === "success") {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success!",
+                                text: response.message,
+                            });
+                            $("#enquiryForm")[0].reset(); // Reset form
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops!",
+                                text: response.message,
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
 
 
 </body>

@@ -179,7 +179,7 @@
         }
 
 
-        @media (max-width: 769px){
+        @media (max-width: 769px) {
             .branches_btn_section {
                 padding: 55px 0px;
             }
@@ -243,7 +243,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -254,7 +254,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -276,7 +276,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Contact us</a>
+                    <a href="#" class="dropdown-toggle">Contact us</a>
                     <ul class="dropdown-menu">
                         <li><a href="enquiry_new.php">Enquiry</a></li>
                         <li><a href="branches.php">Branches</a></li>
@@ -874,7 +874,8 @@
                     <div class="footer_icon">
                         <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
@@ -953,6 +954,33 @@
             </div>
         </div>
     </footer>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Your registration was successful! Click below to proceed to the login page.
+                </div>
+                <div class="modal-footer">
+                    <a href="login.php" class="btn btn-primary">Go to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php if ($showModal): ?>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var myModal = new bootstrap.Modal(document.getElementById('successModal'));
+                myModal.show();
+            });
+        </script>
+    <?php endif; ?>
 
 
 

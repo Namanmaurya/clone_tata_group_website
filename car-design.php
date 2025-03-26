@@ -401,7 +401,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">About Us</a>
+                    <a href="#" class="dropdown-toggle" >About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -412,7 +412,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Products</a>
+                    <a href="#" class="dropdown-toggle" >Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -434,7 +434,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Contact us</a>
+                    <a href="#" class="dropdown-toggle">Contact us</a>
                     <ul class="dropdown-menu">
                         <li><a href="enquiry_new.php">Enquiry</a></li>
                         <li><a href="branches.php">Branches</a></li>

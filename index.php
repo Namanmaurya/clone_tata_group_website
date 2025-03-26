@@ -1,3 +1,33 @@
+<?php
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'enquiry_now_db';
+
+$con = mysqli_connect($hostname, $username, $password, $dbname);
+
+if (!$con) {
+    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $emil = $_POST['email'];
+    $phone_number = $_POST['contact'];
+    $location = $_POST['city'];
+
+    $sql = "INSERT INTO `model_form`(`Name`, `email`, `phone_number`, `location`) VALUES ('$name','$emil','$phone_number','$location')";
+
+    if (mysqli_query($con, $sql)) {
+        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
+    }
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +60,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -55,7 +87,10 @@
                                 required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="styled-input" id="phone" name="phone" placeholder="Phone" required>
+                            <input type="tel" class="styled-input" id="phone" name="contact" placeholder="Phone number"
+                                class="form-control" pattern="\d{10}" maxlength="10" required
+                                title="please enter a valid 10-digit contact number"
+                                oninput="this.value= this.value.replace(/[^0-9]/g, '');">
                         </div>
                         <div class="form-group">
                             <select class="styled-input" id="city" name="city" required>
@@ -74,7 +109,7 @@
                         </div>
                         <button type="submit" class="button">SUBMIT NOW</button>
                     </form>
-                    
+
                     <div id="formMessage" class="text-center text-danger mt-3"></div>
                 </div>
 
@@ -87,6 +122,7 @@
         </div>
 
     </div>
+
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-navbar">
@@ -120,7 +156,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -131,7 +167,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -153,7 +189,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Contact us</a>
+                    <a href="#" class="dropdown-toggle">Contact us</a>
                     <ul class="dropdown-menu">
                         <li><a href="enquiry_new.php">Enquiry</a></li>
                         <li><a href="branches.php">Branches</a></li>
@@ -181,13 +217,13 @@
                     <img src="assets/Images/slider3.jpg" class="d-block w-100" alt="Slide 3">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/Images/slider4.jpg" class="d-block w-100" alt="Slide 3">
+                    <img src="assets/Images/slider4.jpg" class="d-block w-100" alt="Slide 4">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/Images/slider5.jpg" class="d-block w-100" alt="Slide 3">
+                    <img src="assets/Images/slider5.jpg" class="d-block w-100" alt="Slide 5">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/Images/slider6.jpg" class="d-block w-100" alt="Slide 3">
+                    <img src="assets/Images/slider6.jpg" class="d-block w-100" alt="Slide 6">
                 </div>
             </div>
             <!-- Dot navigation -->
@@ -404,7 +440,7 @@
                                 Office/Commercial <br> Elevators
                             </h5>
                             <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -416,7 +452,7 @@
                                 Residential / Home <br> Elevators
                             </h5>
                             <p>Convenience at your doorstep.</p>
-                            <a href="#">READ MORE!</a>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -428,7 +464,7 @@
                                 Hospitel Elevators
                             </h5>
                             <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -440,7 +476,7 @@
                                 Office/Commercial <br> Elevators
                             </h5>
                             <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -452,7 +488,7 @@
                                 Residential / Home <br> Elevators
                             </h5>
                             <p>Convenience at your doorstep.</p>
-                            <a href="#">READ MORE!</a>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -464,7 +500,7 @@
                                 Hospitel Elevators
                             </h5>
                             <p>Development of a full cycle of project documentation on outline sketch design..</p>
-                            <a href="#">READ MORE!</a>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -479,7 +515,7 @@
                                 Residential / Home <br> Elevators
                             </h5>
                             <p>Convenience at your doorstep.</p>
-                            <a href="#">READ MORE!</a>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -488,140 +524,7 @@
                 </div>
             </div>
         </section>
-        <!-- Card_slider_section -->
-        <section class="slider">
-            <div class="slider-container">
-                <h2 class="text-center">What's <b>New?</b></h2>
-                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <div class="slides">
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
 
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
-
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
-
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
-
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
-
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
-
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
-
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="slide">
-                        <div class="slide_card">
-                            <img src="assets\Images\whats_new_img1.jpg" alt="Slide 1" class="card-img-top">
-
-                            <div class="card-body">
-                                <div class="date_card">
-                                    <p>25 July</p>
-                                </div>
-                                <p>CE Elevators proudly cheers for Indian squad as they head to the Paris Olympics
-                                    2024....</p>
-                                <a href="#" class="read-more">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <button class="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
-        </section>
 
 
         <!-- Our Clients Section -->
@@ -932,7 +835,8 @@
                     <div class="footer_icon">
                         <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
@@ -1021,6 +925,43 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#contactForm").submit(function (event) {
+                event.preventDefault(); // Prevent page reload
+
+                $.ajax({
+                    url: "", // Same PHP file
+                    type: "POST",
+                    data: $(this).serialize(), // Serialize form data
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status === "success") {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success!",
+                                text: response.message,
+                            });
+                            $("#contactForm")[0].reset(); // Reset form
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops!",
+                                text: response.message,
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
 
 </body>
 

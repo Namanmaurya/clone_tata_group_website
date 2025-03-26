@@ -77,19 +77,19 @@
 
 /* Basic input styles */
 .styled-input {
-    
-    border: 1px solid #ccc; 
-    outline: none; 
-    transition: border-color 0.3s ease; 
+
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
 .styled-input:focus {
-    border-color: #3498db; 
+    border-color: #3498db;
 }
 
 
 .styled-input:hover {
-    border-color: #fc6a5a; 
+    border-color: #fc6a5a;
 }
 
 /* Submit button */
@@ -105,8 +105,8 @@
     width: 160px;
     border: 0;
     cursor: pointer;
-    overflow: hidden; 
-    transition: color 0.4s ease; 
+    overflow: hidden;
+    transition: color 0.4s ease;
     z-index: 1;
 }
 
@@ -127,7 +127,7 @@
 
 .model .button:hover::after {
     left: 0;
-    
+
 }
 
 .model .button:hover {
@@ -140,7 +140,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    
+
 }
 
 .modelimg img {
@@ -176,7 +176,7 @@
 }
 
 
-.model_text2{
+.model_text2 {
     font-family: rubic, sans-serif;
     font-size: 14px;
     line-height: 1.4;
@@ -186,25 +186,27 @@
 
 
 @media(max-width: 1440px) {
-   
+
 
     .model .form-group input {
         height: 49px;
     }
+
     /* .modelimg img{
         height: 93%;
     } */
 
-    .model .close-btn{
+    .model .close-btn {
         right: 260px;
     }
 }
 
-@media(max-width: 1024px){
-    .model .close-btn{
+@media(max-width: 1025px) {
+    .model .close-btn {
         right: 200px;
     }
-    .model .form-group input{
+
+    .model .form-group input {
         height: 40px;
     }
 
@@ -213,14 +215,14 @@
     }
 
     .modelimg img {
-        height: 90.5% !important;
+        height: 90.7% !important;
     }
-    
+
 }
 
-@media(max-width: 768px){
+@media(max-width: 769px) {
     .modelimg img {
-        height: 82%;
+        height: 93.5% !important;
     }
 
     .card-body {
@@ -230,7 +232,8 @@
     .model .close-btn {
         right: 150px;
     }
-    .card-body p{
+
+    .card-body p {
         margin-bottom: 0px;
     }
 }
@@ -255,20 +258,24 @@
 
     .card-body p {
         font-size: 12px;
-        
+
     }
 
-    .model .button{
+    .model .button {
         padding: 10px 20px 10px 20px;
     }
 
-    .model_text2{
+    .model_text2 {
+        display: none;
+    }
+
+    .model {
         display: none;
     }
 }
 
-@media (max-width: 321px){
-    .model{
+@media (max-width: 321px) {
+    .model {
         display: none;
     }
 }

@@ -1,3 +1,39 @@
+<?php
+$hostname = 'localhost';
+$username = 'root';
+$password = '';
+$dbname = 'enquiry_now_db';
+
+$con = mysqli_connect($hostname, $username, $password, $dbname);
+
+if (!$con) {
+    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['contact'];
+    $company_name = $_POST['companyname'];
+    $subject = $_POST['subject'];
+    $street_address = $_POST['street_address'];
+    $city = $_POST['city'];
+    $state = $_POST['state'];
+    $zip = $_POST['zip'];
+    $massage = $_POST['massage'];
+
+    $sql = "INSERT INTO `enquiry_form`(`name`, `email`, `phone number`, `company_name`, `subject`, `street_address`, `city`, `state`, `zip`, `massage`) 
+            VALUES ('$name','$email','$phone_number','$company_name','$subject','$street_address','$city','$state','$zip','$massage')";
+
+    if (mysqli_query($con, $sql)) {
+        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
+    } else {
+        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
+    }
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +66,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .s_t_about_section {
             padding: 50px 0px;
@@ -88,6 +127,7 @@
         }
 
         .st_card {
+            height: 200px;
             padding: 0 15px;
             filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.08));
             background-color: #fff;
@@ -231,7 +271,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -242,7 +282,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -264,7 +304,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Contact us</a>
+                    <a href="#" class="dropdown-toggle">Contact us</a>
                     <ul class="dropdown-menu">
                         <li><a href="enquiry_new.php">Enquiry</a></li>
                         <li><a href="branches.php">Branches</a></li>
@@ -356,17 +396,17 @@
                             <h2> Enquiry <b>Form</b></h2>
                             <p>For fresh enquiry kindly contact below</p>
 
-                            <form>
+                            <form id="enquiryForm">
                                 <div class="row custom-row">
                                     <div class="col-md-4 custom-col ">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Name" required>
+                                            <input type="text" class="form-control" placeholder="Name" name="name" required>
                                         </span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="email" class="form-control" placeholder="Email" required>
+                                            <input type="email" class="form-control" name="email" placeholder="Email" required>
                                         </span>
 
                                     </div>
@@ -381,35 +421,35 @@
                                     </div>
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="text" class="form-control"
+                                            <input type="text" class="form-control" name="companyname" 
                                                 placeholder="Company Name (Optional)">
 
                                         </span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"> <input type="text" class="form-control"
+                                        <span class="text-input"> <input type="text" name="subject" class="form-control"
                                                 placeholder="Subject" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"><input type="text" class="form-control"
+                                        <span class="text-input"><input type="text" name="street_address" class="form-control"
                                                 placeholder="Street Address" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"> <input type="text" class="form-control"
+                                        <span class="text-input"> <input type="text" name="city"  class="form-control"
                                                 placeholder="City" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
-                                        <span class="text-input"><input type="text" class="form-control"
+                                        <span class="text-input"><input type="text"  name="state" class="form-control"
                                                 placeholder="State" required></span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="tel" name="contact" placeholder="Zip" class="form-control"
+                                            <input type="tel" name="zip" placeholder="Zip" class="form-control"
                                                 pattern="[0-9]{6}" maxlength="6" required
                                                 title="Please enter a valid 6-digit number"
                                                 oninput="this.value = this.value.replace(/\D/g, '').slice(0,6);">
@@ -417,7 +457,7 @@
 
                                     </div>
                                     <div class="col-md-12 custom-full-width ">
-                                        <span class="text-input"> <textarea class="form-control" rows="4"
+                                        <span class="text-input"> <textarea class="form-control" rows="4" name="massage"
                                                 placeholder="Message" required></textarea></span>
 
                                     </div>
@@ -926,7 +966,8 @@
                     <div class="footer_icon">
                         <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
@@ -1015,6 +1056,37 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#enquiryForm").submit(function(event) {
+                event.preventDefault(); // Prevent page reload
+
+                $.ajax({
+                    url: "", // Same PHP file
+                    type: "POST",
+                    data: $(this).serialize(), // Serialize form data
+                    dataType: "json",
+                    success: function(response) {
+                        if (response.status === "success") {
+                            Swal.fire({
+                                icon: "success",
+                                title: "Success!",
+                                text: response.message,
+                            });
+                            $("#enquiryForm")[0].reset(); // Reset form
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Oops!",
+                                text: response.message,
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 
