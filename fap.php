@@ -168,6 +168,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .enquiry_form .enquiry_text {
             background-color: white;
         }
+
+        @media(max-width: 426px){
+            .enquiry_text h2{
+                font-size: 35px;
+            }
+        }
     </style>
 </head>
 

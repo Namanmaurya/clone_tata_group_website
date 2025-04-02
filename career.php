@@ -1,48 +1,3 @@
-<?php
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'enquiry_now_db';
-
-$con = mysqli_connect($hostname, $username, $password, $dbname);
-
-if (!$con) {
-    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['contact'];
-    $position = $_POST['position'];
-    $select_city = $_POST['select_city'];
-    $department = $_POST['department'];
-    $massage = $_POST['massage'];
-    $file_path = "file";
-    if (isset($_FILES['file']) && $_FILES['file']['error'] == 0) {
-        $upload_dir = "uploads/";
-        if (!is_dir($upload_dir)) {
-            mkdir($upload_dir, 0777, true);
-        }
-        
-        $file_name = basename($_FILES['file']['name']);
-        $file_path = $upload_dir . time() . "_" . $file_name;
-        move_uploaded_file($_FILES['file']['tmp_name'], $file_path);
-    }
-
-
-
-    $sql = "INSERT INTO `career_page_form`(`name`, `email`, `phone_number`, `position`, `select_city`, `department`, `massage`, `file`) VALUES ('$name','$email','$phone_number','$position','$select_city','$department','$massage','$file_path')";
-
-    if (mysqli_query($con, $sql)) {
-        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
-    }
-    exit();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -991,17 +946,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="col-md-12">
                         <div class="enquiry_text">
                             <h2> Upload Your <b> Resume</b></h2>
-                            <form id="career_form">
+                            <form id="careerform1" method="post">
                                 <div class="row custom-row">
                                     <div class="col-md-6 custom-col ">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                                            <input type="text" class="form-control" placeholder="Name" name="name"
+                                                required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                                         </span>
 
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <input type="email" class="form-control" placeholder="Email" name="email" required>
+                                            <input type="email" class="form-control" placeholder="Email" name="email"
+                                                required>
                                         </span>
 
                                     </div>
@@ -1016,14 +973,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Position" name="position">
+                                            <input type="text" class="form-control" placeholder="Position"
+                                                name="position">
 
                                         </span>
 
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <select class="form-control option_s"  name="select_city"required>
+                                            <select class="form-control option_s" name="select_city" required>
                                                 <option value="" disabled selected>Select a City</option>
                                                 <option value="mumbai">Mumbai</option>
                                                 <option value="delhi">Delhi</option>
@@ -1040,7 +998,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </div>
                                     <div class="col-md-6 custom-col">
                                         <span class="text-input">
-                                            <select class="form-control option_s"  name="department"required>
+                                            <select class="form-control option_s" name="department" required>
                                                 <option value="" disabled selected>Department</option>
                                                 <option value="mumbai">Accourits </option>
                                                 <option value="delhi">Administration </option>
@@ -1073,7 +1031,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                                     <div class="col-md-12 custom-full-width1">
                                         <span class="text-input">
-                                            <input type="file" class="form-control mt-2" name="fileInput" name="file" required>
+                                        <!-- <input type="file" name="pdf" class="form-control" id="pdf" accept="application/pdf"> -->
+                                            <input type="file" class="form-control mt-2"  name="pdf"
+                                                accept="application/pdf" required>
                                         </span>
 
                                     </div>
@@ -1383,35 +1343,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="index.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $("#career_form").submit(function (event) {
-                event.preventDefault(); // Prevent page reload
+        document.getElementById("careerform1").addEventListener("submit", function (event) {
+            event.preventDefault();
+            let formData = new FormData(this);
 
-                var formData = new FormData(this);
-
-                $.ajax({
-                    url: "", // Same PHP file
-                    type: "POST",
-                    data: $(this).serialize(), // Serialize form data
-                    dataType: "json",
-                    success: function (response) {
-                        if (response.status === "success") {
-                            Swal.fire({
-                                icon: "success",
-                                title: "Success!",
-                                text: response.message,
-                            });
-                            $("#career_form")[0].reset(); // Reset form
-                        } else {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops!",
-                                text: response.message,
-                            });
-                        }
+            fetch("career_form.php", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    Swal.fire({
+                        icon: data.success ? 'success' : 'error',
+                        title: data.success ? 'Success!' : 'Error!',
+                        text: data.message,
+                    });
+                    if (data.success) {
+                        document.getElementById("careerform1").reset();
                     }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'Something went wrong. Please try again.',
+                    });
                 });
-            });
         });
     </script>
 

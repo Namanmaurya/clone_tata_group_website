@@ -186,6 +186,8 @@
             color: white;
         }
 
+        
+
         @media (max-width:1025px) {
             .card-content {
 
@@ -201,6 +203,14 @@
             .card-content {
                 padding: 15px 0px;
             }
+        }
+
+        @media (max-width: 426px){
+            .blog_section{
+                margin-top: 80px;
+            }
+
+            
         }
     </style>
 </head>

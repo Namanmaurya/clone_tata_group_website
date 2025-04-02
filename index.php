@@ -1,32 +1,3 @@
-<?php
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'enquiry_now_db';
-
-$con = mysqli_connect($hostname, $username, $password, $dbname);
-
-if (!$con) {
-    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $emil = $_POST['email'];
-    $phone_number = $_POST['contact'];
-    $location = $_POST['city'];
-
-    $sql = "INSERT INTO `model_form`(`Name`, `email`, `phone_number`, `location`) VALUES ('$name','$emil','$phone_number','$location')";
-
-    if (mysqli_query($con, $sql)) {
-        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
-    }
-    exit();
-}
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -78,9 +49,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         Our expert assesses your space, discusses your requirements, and provides recommendations
                         tailored to your needs.
                     </p>
-                    <form id="contactForm">
+                    <form id="contactForm" method="post">
                         <div class="form-group">
-                            <input type="text" class="styled-input" id="name" name="name" placeholder="Name" required>
+                            <input type="text" class="styled-input" id="name" name="name" placeholder="Name" required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                         </div>
                         <div class="form-group">
                             <input type="email" class="styled-input" id="email" name="email" placeholder="Email"
@@ -333,7 +304,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="branches.php">
                             <div class="sub_card">
                                 <h3>
                                     Advance SMART Digital Technology
@@ -343,7 +314,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="branches.php">
                             <div class="sub_card">
                                 <h3>
                                     Pan India Presence
@@ -352,7 +323,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="branches.php">
                             <div class="sub_card">
                                 <h3>
                                     People, Process and Culture
@@ -361,7 +332,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="branches.php">
                             <div class="sub_card">
                                 <h3>
                                     Enhanced Safety and Peace of Mind
@@ -370,7 +341,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="branches.php">
                             <div class="sub_card">
                                 <h3>
                                     Customer Centric Approach
@@ -379,7 +350,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="">
+                        <a href="branches.php">
                             <div class="sub_card">
                                 <h3>
                                     Make In India Built for Sustainability
@@ -927,35 +898,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="index.js"></script>
 
     <script>
-        $(document).ready(function () {
-            $("#contactForm").submit(function (event) {
-                event.preventDefault(); // Prevent page reload
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            let formData = new FormData(this);
 
-                $.ajax({
-                    url: "", // Same PHP file
-                    type: "POST",
-                    data: $(this).serialize(), // Serialize form data
-                    dataType: "json",
-                    success: function (response) {
-                        if (response.status === "success") {
-                            Swal.fire({
-                                icon: "success",
-                                title: "Success!",
-                                text: response.message,
-                            });
-                            $("#contactForm")[0].reset(); // Reset form
-                        } else {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops!",
-                                text: response.message,
-                            });
-                        }
-                    }
+            fetch("model_form.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                Swal.fire({
+                    icon: data.success ? 'success' : 'error',
+                    title: data.success ? 'Success!' : 'Error!',
+                    text: data.message,
+                });
+                if (data.success) {
+                    document.getElementById("contactForm").reset();
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'Something went wrong. Please try again.',
                 });
             });
         });
     </script>
+
 
 
 

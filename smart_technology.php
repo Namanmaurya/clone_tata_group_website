@@ -1,38 +1,3 @@
-<?php
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'enquiry_now_db';
-
-$con = mysqli_connect($hostname, $username, $password, $dbname);
-
-if (!$con) {
-    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['contact'];
-    $company_name = $_POST['companyname'];
-    $subject = $_POST['subject'];
-    $street_address = $_POST['street_address'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $zip = $_POST['zip'];
-    $massage = $_POST['massage'];
-
-    $sql = "INSERT INTO `enquiry_form`(`name`, `email`, `phone number`, `company_name`, `subject`, `street_address`, `city`, `state`, `zip`, `massage`) 
-            VALUES ('$name','$email','$phone_number','$company_name','$subject','$street_address','$city','$state','$zip','$massage')";
-
-    if (mysqli_query($con, $sql)) {
-        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
-    }
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .s_t_about_section {
-            padding: 50px 0px;
+            padding: 50px 0px 0px 0px;
         }
 
         .s_t_about_section h3 {
@@ -396,11 +361,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <h2> Enquiry <b>Form</b></h2>
                             <p>For fresh enquiry kindly contact below</p>
 
-                            <form id="enquiryForm">
+                            <form id="enquiryForm" method="POST">
                                 <div class="row custom-row">
                                     <div class="col-md-4 custom-col ">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Name" name="name" required>
+                                            <input type="text" class="form-control" placeholder="Name" name="name" required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                                         </span>
 
                                     </div>
@@ -419,35 +384,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         </span>
 
                                     </div>
-                                    <div class="col-md-4 custom-col">
+                                    <!-- <div class="col-md-4 custom-col">
                                         <span class="text-input">
                                             <input type="text" class="form-control" name="companyname" 
                                                 placeholder="Company Name (Optional)">
 
                                         </span>
 
-                                    </div>
-                                    <div class="col-md-4 custom-col">
+                                    </div> -->
+                                    <!-- <div class="col-md-4 custom-col">
                                         <span class="text-input"> <input type="text" name="subject" class="form-control"
                                                 placeholder="Subject" required></span>
 
-                                    </div>
-                                    <div class="col-md-4 custom-col">
+                                    </div> -->
+                                    <!-- <div class="col-md-4 custom-col">
                                         <span class="text-input"><input type="text" name="street_address" class="form-control"
                                                 placeholder="Street Address" required></span>
 
-                                    </div>
-                                    <div class="col-md-4 custom-col">
+                                    </div> -->
+                                    <!-- <div class="col-md-4 custom-col">
                                         <span class="text-input"> <input type="text" name="city"  class="form-control"
                                                 placeholder="City" required></span>
 
-                                    </div>
-                                    <div class="col-md-4 custom-col">
+                                    </div> -->
+                                    <!-- <div class="col-md-4 custom-col">
                                         <span class="text-input"><input type="text"  name="state" class="form-control"
                                                 placeholder="State" required></span>
 
-                                    </div>
-                                    <div class="col-md-4 custom-col">
+                                    </div> -->
+                                    <!-- <div class="col-md-4 custom-col">
                                         <span class="text-input">
                                             <input type="tel" name="zip" placeholder="Zip" class="form-control"
                                                 pattern="[0-9]{6}" maxlength="6" required
@@ -455,7 +420,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 oninput="this.value = this.value.replace(/\D/g, '').slice(0,6);">
                                         </span>
 
-                                    </div>
+                                    </div> -->
                                     <div class="col-md-12 custom-full-width ">
                                         <span class="text-input"> <textarea class="form-control" rows="4" name="massage"
                                                 placeholder="Message" required></textarea></span>
@@ -580,7 +545,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </section>
 
         <!-- Card_slider_section -->
-        <section class="slider">
+        <!-- <section class="slider">
             <div class="slider-container">
                 <h2 class="text-center">What's <b>New?</b></h2>
                 <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
@@ -712,7 +677,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <button class="next" onclick="moveSlide(1)">&#10095;</button>
             </div>
-        </section>
+        </section> -->
 
         <section class="stm_video">
             <div class="container">
@@ -1058,36 +1023,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="index.js"></script>
 
     <script>
-        $(document).ready(function() {
-            $("#enquiryForm").submit(function(event) {
-                event.preventDefault(); // Prevent page reload
+        document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            let formData = new FormData(this);
 
-                $.ajax({
-                    url: "", // Same PHP file
-                    type: "POST",
-                    data: $(this).serialize(), // Serialize form data
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.status === "success") {
-                            Swal.fire({
-                                icon: "success",
-                                title: "Success!",
-                                text: response.message,
-                            });
-                            $("#enquiryForm")[0].reset(); // Reset form
-                        } else {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops!",
-                                text: response.message,
-                            });
-                        }
-                    }
+            fetch("pro_enquiry_form.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                Swal.fire({
+                    icon: data.success ? 'success' : 'error',
+                    title: data.success ? 'Success!' : 'Error!',
+                    text: data.message,
+                });
+                if (data.success) {
+                    document.getElementById("enquiryForm").reset();
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'Something went wrong. Please try again.',
                 });
             });
         });
     </script>
-
 </body>
 
 </html>

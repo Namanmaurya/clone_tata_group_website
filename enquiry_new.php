@@ -1,38 +1,4 @@
-<?php
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'enquiry_now_db';
 
-$con = mysqli_connect($hostname, $username, $password, $dbname);
-
-if (!$con) {
-    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['contact'];
-    $company_name = $_POST['companyname'];
-    $subject = $_POST['subject'];
-    $street_address = $_POST['street_address'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $zip = $_POST['zip'];
-    $massage = $_POST['massage']; 
-
-    $sql = "INSERT INTO `enquiry_form`(`name`, `email`, `phone number`, `company_name`, `subject`, `street_address`, `city`, `state`, `zip`, `massage`) 
-            VALUES ('$name','$email','$phone_number','$company_name','$subject','$street_address','$city','$state','$zip','$massage')";
-
-    if (mysqli_query($con, $sql)) {
-        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
-    }
-    exit();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -67,8 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -165,19 +130,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="col-md-12">
                         <div class="enquiry_text">
                             <h2> Enquiry <b>Now</b></h2>
-                            <p>Are you planning lift installation for your home, office, or any residential or
+                            <!-- <p>Are you planning lift installation for your home, office, or any residential or
                                 commercial property, etc.? Our expert assesses your space, discusses your requirements,
                                 and provides recommendations tailored to your needs. Resolve your queries, and explore
                                 various lift options & cabin designs, safety features, installation processes, and cost
                                 estimates.</p>
-                            <p>We ensure a safe, smooth, efficient lift installation that meets your requirements.</p>
+                            <p>We ensure a safe, smooth, efficient lift installation that meets your requirements.</p> -->
 
-                            <form id="enquiryForm">
+                            <form id="enquiryForm" method="POST">
                                 <div class="row custom-row">
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
                                             <input type="text" class="form-control" name="name" placeholder="Name"
-                                                required>
+                                                required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                                         </span>
                                     </div>
                                     <div class="col-md-4 custom-col">
@@ -194,44 +159,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 oninput="this.value= this.value.replace(/[^0-9]/g, '');">
                                         </span>
                                     </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="text" name="companyname" class="form-control"
-                                                placeholder="Company Name (Optional)">
-                                        </span>
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="text" name="subject" class="form-control" placeholder="Subject"
-                                                required>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="text" name="street_address" class="form-control"
-                                                placeholder="Street Address" required>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="text" name="city" class="form-control" placeholder="City"
-                                                required>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="text" name="state" class="form-control" placeholder="State"
-                                                required>
-                                        </span>
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="tel" name="zip" placeholder="Zip" class="form-control"
-                                                pattern="[0-9]{6}" maxlength="6" required
-                                                title="Please enter a valid 6-digit number"
-                                                oninput="this.value = this.value.replace(/\D/g, '').slice(0,6);">
-                                        </span>
-                                    </div>
+                                    
                                     <div class="col-md-12 custom-full-width">
                                         <span class="text-input">
                                             <textarea class="form-control" rows="4" placeholder="Message" name="massage"
@@ -377,31 +305,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        $(document).ready(function() {
-            $("#enquiryForm").submit(function(event) {
-                event.preventDefault(); // Prevent page reload
+        document.getElementById("enquiryForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            let formData = new FormData(this);
 
-                $.ajax({
-                    url: "", // Same PHP file
-                    type: "POST",
-                    data: $(this).serialize(), // Serialize form data
-                    dataType: "json",
-                    success: function(response) {
-                        if (response.status === "success") {
-                            Swal.fire({
-                                icon: "success",
-                                title: "Success!",
-                                text: response.message,
-                            });
-                            $("#enquiryForm")[0].reset(); // Reset form
-                        } else {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops!",
-                                text: response.message,
-                            });
-                        }
-                    }
+            fetch("pro_enquiry_form.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                Swal.fire({
+                    icon: data.success ? 'success' : 'error',
+                    title: data.success ? 'Success!' : 'Error!',
+                    text: data.message,
+                });
+                if (data.success) {
+                    document.getElementById("enquiryForm").reset();
+                }
+            })
+            .catch(error => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error!',
+                    text: 'Something went wrong. Please try again.',
                 });
             });
         });

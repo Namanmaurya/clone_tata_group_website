@@ -1296,7 +1296,7 @@ h5 {
 
 
 .enquiry_form {
-    padding: 90px 0px;
+    padding: 20px 0px;
 
 }
 
@@ -1507,6 +1507,8 @@ form {
     .login {
         margin-top: 155px;
     }
+
+    
 
 
 }
@@ -1811,6 +1813,7 @@ form {
         position: relative;
         left: -50%;
     }
+
 }
 
 @media(max-width: 376px) {
@@ -1896,6 +1899,10 @@ form {
 
     .enquiry_text {
         padding: 40px 15px;
+    }
+    .dropdown-menu {
+        position: relative;
+        left: -50%;
     }
 
 }

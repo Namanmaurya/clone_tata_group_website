@@ -955,36 +955,7 @@
         </div>
     </footer>
 
-    <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="successModalLabel">Registration Successful</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Your registration was successful! Click below to proceed to the login page.
-                </div>
-                <div class="modal-footer">
-                    <a href="login.php" class="btn btn-primary">Go to Login</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php if ($showModal): ?>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                var myModal = new bootstrap.Modal(document.getElementById('successModal'));
-                myModal.show();
-            });
-        </script>
-    <?php endif; ?>
-
-
-
-    <!-- Scroll Up Button -->
+     <!-- Scroll Up Button -->
     <button id="scrollUp" onclick="topFunction()" class="btn"><i class="fa-solid fa-arrow-up"></i></button>
 
     <!-- Bootstrap JS and dependencies -->
