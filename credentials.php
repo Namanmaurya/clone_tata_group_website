@@ -102,9 +102,7 @@
         }
 
 
-        .residential_card_section {
-            padding: 90px 0px;
-        }
+        
 
         /* Card Wrapper */
         .resedential_card_img {
@@ -169,6 +167,10 @@
             margin-top: 5px;
             font-weight: normal;
             text-transform: uppercase;
+        }
+
+        .fhs_mtzero{
+            margin-top: 40px;
         }
 
 
@@ -283,7 +285,7 @@
     <main>
 
         <!-- factory_hero_sectioin -->
-        <section class="factory_hero_section">
+        <section class="factory_hero_section" id="factory_hero_sec">
             <div class="factory_hero_section_bg">
                 <div class="container-fluid">
                     <div class="row">
@@ -453,7 +455,7 @@
 
 
         <!-- factory_hero_sectioin -->
-        <section class="factory_hero_section">
+        <section class="factory_hero_section fhs_mtzero" id="factory_hero_section_comercial">
             <div class="factory_hero_section_bg">
                 <div class="container-fluid">
                     <div class="row">
@@ -623,7 +625,7 @@
 
 
         <!-- factory_hero_sectioin -->
-        <section class="factory_hero_section">
+        <section class="factory_hero_section fhs_mtzero" id="factory_hero_section_hospital">
             <div class="factory_hero_section_bg">
                 <div class="container-fluid">
                     <div class="row">
@@ -762,8 +764,287 @@
             </div>
         </section>
 
-    </main>
+        <!-- factory_hero_sectioin -->
+        <section class="factory_hero_section fhs_mtzero" id="factory_hero_section_hotel">
+            <div class="factory_hero_section_bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="fac_h_sec_text text-center">
+                                <h1>
+                                    Hotel
+                                </h1>
+                                <div class="hero_sec_link text-center">
+                                    <span>
+                                        <a href="index.php">Home</a>
+                                    </span>
+                                    <span>Hotel</span>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="residential_card_section">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                            <img src="assets\Images\hospital_p_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHALBY HOTEL
+                            </h4>
+                            <H5>
+                                JAIPUR
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\hospital_p_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHRISTI HOTEL
+                            </h4>
+                            <H5>
+                                DIBRUGARH
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\hospital_p_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SANJIVANI HOTEL
+                            </h4>
+                            <H5>
+                                DIBRUGARH
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\hospital_p_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                LNJP HOTEL
+                            </h4>
+                            <H5>
+                                DELHI
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\hospital_p_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHALBY HOTEL
+                            </h4>
+                            <H5>
+                                MOHALI
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\hospital_p_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHALBY HOTEL
+                            </h4>
+                            <H5>
+                                INDORE
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\hospital_p_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                MILITORY HOTEL
+                            </h4>
+                            <H5>
+                                DEHRADUN
+                            </H5>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- factory_hero_sectioin -->
+        <section class="factory_hero_section fhs_mtzero" id="factory_hero_section_industry">
+            <div class="factory_hero_section_bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="fac_h_sec_text text-center">
+                                <h1>
+                                Industry
+                                </h1>
+                                <div class="hero_sec_link text-center">
+                                    <span>
+                                        <a href="index.php">Home</a>
+                                    </span>
+                                    <span>Industry</span>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="residential_card_section">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\residential_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHALBY PVL
+                            </h4>
+                            <H5>
+                                JAIPUR
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\residential_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHRISTI PVL
+                            </h4>
+                            <H5>
+                                DIBRUGARH
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\residential_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SANJIVANI PVL
+                            </h4>
+                            <H5>
+                                DIBRUGARH
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\residential_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                LNJP PVL
+                            </h4>
+                            <H5>
+                                DELHI
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\residential_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHALBY PVL
+                            </h4>
+                            <H5>
+                                MOHALI
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\residential_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                SHALBY PVL
+                            </h4>
+                            <H5>
+                                INDORE
+                            </H5>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4 my-5 ">
+                        <div class="resedential_card_img ">
+                        <img src="assets\Images\residential_img1.jpg" alt="residential_img" class="img-fluid">
+
+                        </div>
+                        <div class="resedential_card_title text-center">
+                            <h4>
+                                MILITORY PVL
+                            </h4>
+                            <H5>
+                                DEHRADUN
+                            </H5>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+
+    </main>
 
 
     <footer>
@@ -776,7 +1057,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -784,7 +1065,8 @@
                     <div class="footer_icon">
                         <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
@@ -827,11 +1109,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -844,8 +1126,6 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -855,7 +1135,7 @@
         <div class="container-flued footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
-                    <p>Copyright © 2025 <span>ECE Elevators</span> All rights reserved.</p>
+                    <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
                     <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
@@ -863,6 +1143,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- Scroll Up Button -->
     <button id="scrollUp" onclick="topFunction()" class="btn"><i class="fa-solid fa-arrow-up"></i></button>

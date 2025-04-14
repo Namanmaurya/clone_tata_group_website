@@ -1,6 +1,5 @@
 /* Basic modal styles */
 
-
 .col-md-4 {
     padding: 0;
 }
@@ -29,8 +28,6 @@
     height: 95%;
     display: flex;
 }
-
-
 
 /* Close button */
 .model .close-btn {
@@ -63,17 +60,12 @@
     transition: black 0.3s ease;
 }
 
-
-
-
-
 .model .form-group input::placeholder,
 .model .form-group select {
     color: #888;
     height: 50px;
     font-size: 16px;
 }
-
 
 /* Basic input styles */
 .styled-input {
@@ -86,7 +78,6 @@
 .styled-input:focus {
     border-color: #3498db;
 }
-
 
 .styled-input:hover {
     border-color: #fc6a5a;
@@ -123,8 +114,6 @@
     z-index: -1;
 }
 
-
-
 .model .button:hover::after {
     left: 0;
 
@@ -133,8 +122,6 @@
 .model .button:hover {
     color: white;
 }
-
-
 
 .modelimg {
     width: 100%;
@@ -151,7 +138,6 @@
 
 }
 
-/* Transition effects for modal opening and closing */
 .model.hide {
     opacity: 0;
     visibility: hidden;
@@ -183,7 +169,6 @@
     color: #707070;
     margin: 15px 0px;
 }
-
 
 @media(max-width: 1440px) {
 

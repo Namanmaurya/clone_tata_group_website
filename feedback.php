@@ -156,7 +156,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -164,7 +164,8 @@
                     <div class="footer_icon">
                         <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
                         <a href="https://x.com/?lang=en"><i class="fa-brands fa-square-x-twitter"></i></a>
-                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/accounts/login/?hl=en"> <i
+                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://in.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a>
                     </div>
@@ -207,11 +208,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -224,8 +225,6 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -235,7 +234,7 @@
         <div class="container-flued footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
-                    <p>Copyright © 2025 <span>ECE Elevators</span> All rights reserved.</p>
+                    <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
                     <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
@@ -243,6 +242,7 @@
             </div>
         </div>
     </footer>
+
 
 
     <!-- Scroll Up Button -->

@@ -44,10 +44,9 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card-body">
-                    <h3>Request A Free <br>Consultation</h3>
+                    <h3>Get a Free Consultation</h3>
                     <p>
-                        Our expert assesses your space, discusses your requirements, and provides recommendations
-                        tailored to your needs.
+                    Our expert evaluates your space, understands your requirements, and offers personalized recommendations.
                     </p>
                     <form id="contactForm" method="post">
                         <div class="form-group">
@@ -233,10 +232,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="p_text text-center">Internet of Things (IoT) & Artificial Intelligence (AI) with Cloud
-                            Server for Real-Time communication, health monitoring, and SMART diagnostics. ECE Elevators
-                            is the FIRST in the country to offer this advanced capability as a Standard Feature in our
-                            SMART Elevators.</p>
+                        <p class="p_text text-center">The Internet of Things (IoT) and Artificial Intelligence (AI) integrated with a Cloud Server enable real-time communication, health monitoring, and SMART diagnostics. ABC Elevators is the FIRST in the country to offer this advanced capability as a standard feature in our SMART Elevators.</p>
                         <div class="row">
                             <div class="col-md-4 ">
                                 <div class="card">
@@ -299,12 +295,12 @@
                     <div class="col-md-12">
                         <div class="section-title">
                             <h2>
-                                ECE <b>Advantage</b>
+                                ABC <b>Advantage</b>
                             </h2>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <a href="branches.php">
+                        <a href="smart_technology.php#carouselExample">
                             <div class="sub_card">
                                 <h3>
                                     Advance SMART Digital Technology
@@ -323,7 +319,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="branches.php">
+                        <a href="company_overview.php">
                             <div class="sub_card">
                                 <h3>
                                     People, Process and Culture
@@ -332,7 +328,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="branches.php">
+                        <a href="company_overview.php">
                             <div class="sub_card">
                                 <h3>
                                     Enhanced Safety and Peace of Mind
@@ -341,7 +337,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="branches.php">
+                        <a href="company_overview.php">
                             <div class="sub_card">
                                 <h3>
                                     Customer Centric Approach
@@ -350,7 +346,7 @@
                         </a>
                     </div>
                     <div class="col-md-4">
-                        <a href="branches.php">
+                        <a href="company_overview.php">
                             <div class="sub_card">
                                 <h3>
                                     Make In India Built for Sustainability
@@ -370,19 +366,18 @@
                         <div class="col-md-4">
                             <div class="president_card_img ">
                                 <img src="assets\Images\manish_sikka.jpg" alt="img" class="img-fluid">
-                                <a href="#">
+                                <a href="https://www.youtube.com/@eceelevators1" target="_black">
                                     <div class="play-button">
                                         <i class="fa fa-play"></i>
                                     </div>
                                 </a>
-
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="president_card_text">
-                                <h2>Manish Sikka </h2>
-                                <h4> President - ECE Elevator</h4>
-                                <p>Mr. Manish Sikka, President - Elevator Division, ECE Industries Ltd, (A Birla Group
+                                <h2>Aman Sikka </h2>
+                                <h4> President - ABC Elevator</h4>
+                                <p>Mr. Aman Sikka, President - Elevator Division, ABC Industries Ltd, (A ABC Group
                                     Co.) shares his views and plans for the future in its 75th year of operations.
                                     Further more he also discusses plans to step up quality, technology upgradation and
                                     innovation and deliver world class products. </p>
@@ -398,9 +393,7 @@
         <section class="key_variable">
             <div class="container">
                 <h2 class="text-center">Key <b> Verticals</b></h2>
-                <p class="text-center">ECE Elevators cater to all segments and are accordingly designed with specific
-                    parameters. From old and restored buildings to the brand new technologically advanced high rise
-                    structures – the solutions are meticulously designed and are user friendly.</p>
+                <p class="text-center">ABC Elevators serve all segments, with designs tailored to specific requirements. Whether for old and restored buildings or cutting-edge high-rise structures, our solutions are meticulously crafted for efficiency, innovation, and user-friendly operation.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card_w_i">
@@ -410,7 +403,7 @@
                             <h5>
                                 Office/Commercial <br> Elevators
                             </h5>
-                            <p>Development of a full cycle of project documentation on outline sketch design..</p>
+                            <p>Development of a full cycle of project documentation on outline sketch design.</p>
 
                         </div>
                     </div>
@@ -687,7 +680,7 @@
                             <div class="t_card_part_S">
                                 <i class="fa-solid fa-quote-left"></i>
                                 <p class="text-center">Excellent services and work. Services are very good In Shalby
-                                    Hospital Jaipur by ECE Elevators team and thanks for full support.
+                                    Hospital Jaipur by ABC Elevators team and thanks for full support.
                                 </p>
 
                             </div>
@@ -705,7 +698,7 @@
                         <div class="t_card_part1">
                             <div class="t_card_part_S">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">We have been associated with ECE for last 3 years and our
+                                <p class="text-center">We have been associated with ABC for last 3 years and our
                                     experience has been great. All the elevators are equipped with smart features to
                                     tackle any problem.
                                 </p>
@@ -744,7 +737,7 @@
                         <div class="t_card_part1">
                             <div class="t_card_part_S">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">The service provided by ECE team is excellent at our premises JKJ
+                                <p class="text-center">The service provided by ABC team is excellent at our premises JKJ
                                     Jewellers, near Satkar Shopping Center, Malviya Nagar, Jaipur. Appreciate your team
                                     work, thank you.
                                 </p>
@@ -763,7 +756,7 @@
                         <div class="t_card_part1">
                             <div class="t_card_part_S">
                                 <i class="fa-solid fa-quote-left"></i>
-                                <p class="text-center">The service provided by ECE team is excellent at our premises JKJ
+                                <p class="text-center">The service provided by ABC team is excellent at our premises JKJ
                                     Jewellers, near
                                     Satkar Shopping Center, Malviya Nagar, Jaipur. Appreciate your team work, thank you.
                                 </p>
@@ -798,7 +791,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -850,11 +843,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -867,8 +860,6 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -878,10 +869,11 @@
         <div class="container-flued footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
-                    <p>Copyright © 2025 <span>ECE Elevators</span> All rights reserved.</p>
+                    <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
-                    <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
+                    <p>Privary policy / Term & Condition / Sitemap
+                    </p>
                 </div>
             </div>
         </div>
@@ -926,13 +918,6 @@
             });
         });
     </script>
-
-
-
-
-
-
-
 
 </body>
 

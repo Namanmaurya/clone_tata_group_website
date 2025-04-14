@@ -1,37 +1,3 @@
-<?php
-$hostname = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'enquiry_now_db';
-
-$con = mysqli_connect($hostname, $username, $password, $dbname);
-
-if (!$con) {
-    die(json_encode(["status" => "error", "message" => "Database connection failed!"]));
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['contact'];
-    $company_name = $_POST['companyname'];
-    $subject = $_POST['subject'];
-    $street_address = $_POST['street_address'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $zip = $_POST['zip'];
-    $massage = $_POST['massage'];
-
-    $sql = "INSERT INTO `faq`(`name`, `email`, `phone_number`, `company_name`, `subject`, `street_address`, `city`, `state`, `zip`, `massage`) VALUES ('$name ','$email','$phone_number','$company_name','$subject','$street_address','$city','$state','$zip','$massage')";
-
-    if (mysqli_query($con, $sql)) {
-        echo json_encode(["status" => "success", "message" => "Your data has been successfully submitted!"]);
-    } else {
-        echo json_encode(["status" => "error", "message" => "Error submitting data. Please try again."]);
-    }
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -169,10 +135,117 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: white;
         }
 
-        @media(max-width: 426px){
-            .enquiry_text h2{
+        @media(max-width: 426px) {
+            .enquiry_text h2 {
                 font-size: 35px;
             }
+        }
+
+        /* Form Section */
+        .enquiry-section {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .enquiry-section h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Form Styling */
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+        }
+
+        /* Select Styling */
+        .form-input select {
+            appearance: none;
+            background: url('dropdown-icon.png') no-repeat right center;
+        }
+
+        /* Checkbox Section */
+        .form-check-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .form-check-input {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Captcha Section */
+        .recaptcha-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .recaptcha-box img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .recaptcha-box a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .recaptcha-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .form-button {
+            margin-top: 20px;
+        }
+
+        .form-button button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-button button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -616,108 +689,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </section>
 
-        <section class="enquiry_form">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="enquiry_text">
-                            <h2> Book a FREE consultation/site inspection</h2>
-
-                            <form id="enquiryForm">
-                                <div class="row custom-row">
-                                    <div class="col-md-4 custom-col ">
-                                        <span class="text-input">
-                                            <input type="text" class="form-control" name="name" placeholder="Name"
-                                                required>
-                                        </span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="email" class="form-control" name="email" placeholder="Email"
-                                                required>
-                                        </span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="tel" name="contact" placeholder="Phone number"
-                                                class="form-control" pattern="\d{10}" maxlength="10" required
-                                                title="please enter a valid 10-digit contact number"
-                                                oninput="this.value= this.value.replace(/[^0-9]/g, '');">
-                                        </span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="text" name="companyname" class="form-control"
-                                                placeholder="Company Name (Optional)">
-
-                                        </span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input"> <input type="text" name="subject" class="form-control"
-                                                placeholder="Subject" required></span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input"><input type="text" name="street_address"
-                                                class="form-control" placeholder="Street Address" required></span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input"> <input type="text" name="city" class="form-control"
-                                                placeholder="City" required></span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input"><input type="text" name="state" class="form-control"
-                                                placeholder="State" required></span>
-
-                                    </div>
-                                    <div class="col-md-4 custom-col">
-                                        <span class="text-input">
-                                            <input type="tel" name="zip" placeholder="Zip" class="form-control"
-                                                pattern="[0-9]{6}" maxlength="6" required
-                                                title="Please enter a valid 6-digit number"
-                                                oninput="this.value = this.value.replace(/\D/g, '').slice(0,6);">
-                                        </span>
-
-                                    </div>
-                                    <div class="col-md-12 custom-full-width ">
-                                        <span class="text-input"> <textarea class="form-control" name="massage" rows="4"
-                                                placeholder="Message" required></textarea></span>
-
-                                    </div>
-
-                                    <div class="form-check ">
-                                        <input class="form-check-input" type="checkbox" id="robotCheck" required>
-                                        <label class="form-check-label" for="robotCheck">
-                                            I'm not a robot
-                                        </label>
-                                        <div class="robot_img">
-                                            <img src="assets\Images\not_robot_img.png" alt="image">
-                                            <p>reCAPTCHA</p>
-                                            <p><a href="">Privacy</a> -<a href="">Term</a></p>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="footer_button btn_m">
-                                    <button type="submit">SUBMIT</button>
-                                </div>
-
-
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Social Presence Section -->
 
         <section class="social_presence ">
@@ -787,7 +758,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -839,11 +810,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -856,8 +827,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -875,8 +844,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </footer>
-
-
 
     <!-- Scroll Up Button -->
     <button id="scrollUp" onclick="topFunction()" class="btn"><i class="fa-solid fa-arrow-up"></i></button>
@@ -914,38 +881,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
     </script>
-    <script>
-        $(document).ready(function () {
-            $("#enquiryForm").submit(function (event) {
-                event.preventDefault(); // Prevent page reload
 
-                $.ajax({
-                    url: "", // Same PHP file
-                    type: "POST",
-                    data: $(this).serialize(), // Serialize form data
-                    dataType: "json",
-                    success: function (response) {
-                        if (response.status === "success") {
-                            Swal.fire({
-                                icon: "success",
-                                title: "Success!",
-                                text: response.message,
-                            });
-                            $("#enquiryForm")[0].reset(); // Reset form
-                        } else {
-                            Swal.fire({
-                                icon: "error",
-                                title: "Oops!",
-                                text: response.message,
-                            });
-                        }
-                    }
-                });
-            });
-        });
-    </script>
-
-
+    
 
 </body>
 

@@ -78,7 +78,7 @@
         }
 
         .stm_video {
-            padding: 90px 0px;
+            padding: 70px 0px;
         }
 
         .stm_video h2 {
@@ -87,9 +87,9 @@
         }
 
 
-        .services_st_cards {
+        /* .services_st_cards {
             padding: 60px 0px;
-        }
+        } */
 
         .st_card {
             height: 200px;
@@ -317,14 +317,14 @@
             </div>
         </div>
 
-        <section class="s_t_about_section">
+        <section class="s_t_about_section" >
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h3>About Us</h3>
                         <h2>Smart Elevator.<b> Smart Technology</b></h2>
                         <p>Welcome to the world of <b>smart elevators</b> based on <b>smart technology</b> that
-                            originated in India. The focal point of all technological development at <b>ECE
+                            originated in India. The focal point of all technological development at <b>ABC
                                 Elevators</b> is the end-user. Safety, Reliability & Aesthetics are the foundations on
                             which our elevators are built. As part of Birla Group, we take immense pride in being the
                             most trusted and the <b>best brand of elevators</b> catering to requirements of all lifts
@@ -341,8 +341,8 @@
                             to press the button, they can use lifts through their phone – a truly <b>touchless
                                 operation.</b></p>
                         <p>With our Pan India Presence, <b>world-class service</b> is part of our standard offerings.
-                            When you choose <b>ECE Lifts</b> , you choose a smart elevator experience made for India and
-                            in India. The <b>Products and Technology</b> based on Smart Features ECE Elevators is rated
+                            When you choose <b>ABC Lifts</b> , you choose a smart elevator experience made for India and
+                            in India. The <b>Products and Technology</b> based on Smart Features ABC Elevators is rated
                             among the <b> top 10 best elevator companies in India.</b></p>
 
 
@@ -458,7 +458,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h3>ECE Advantage</h3>
+                        <h3>ABC Advantage</h3>
                         <h2>Reason to<b> Choose us</b></h2>
                         <p>We’ve been established as a family furnishers business for over 60 years. With a beautiful
                             showroom in Kolkata, out friendly staff pride themselves in providing a high level of
@@ -683,7 +683,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
-                        <h2>ECE Elevators -<b>A Journey Through Time</b> </h2>
+                        <h2>ABC Elevators -<b>A Journey Through Time</b> </h2>
                         <iframe class="responsive-iframe"
                             src="https://www.youtube.com/embed/tyk0pdnzzwc?si=hIlA6QRS--_HFWxU"
                             title="YouTube video player" frameborder="0"
@@ -704,9 +704,9 @@
                             <h2>Our <b>Services</b></h2>
                         </div>
                         <div class="ser_pra_text text-center">
-                            <p>No matter what the requirement ECE Elevators caters to all segments and are designed with
+                            <p>No matter what the requirement ABC Elevators caters to all segments and are designed with
                                 specific parameters needed by the industry. Old and restored buildings to the brand new
-                                technologically advanced structures. ECE Elevators covers the entire spectrum and
+                                technologically advanced structures. ABC Elevators covers the entire spectrum and
                                 provides thoughtfully designed and consumer friendly solutions.</p>
                         </div>
 
@@ -907,12 +907,7 @@
             <button class="btn btn-danger mt-3" onclick="nextSlide()"> <i class="fas fa-arrow-right"></i></button>
         </section>
 
-
-
-
-
     </main>
-
     <footer>
         <div class="container  footer_upper">
             <div class="row">
@@ -923,7 +918,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -975,11 +970,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -992,8 +987,6 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -1003,15 +996,15 @@
         <div class="container-flued footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
-                    <p>Copyright © 2025 <span>ECE Elevators</span> All rights reserved.</p>
+                    <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
-                    <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
+                <p>Privary policy / Term & Condition / Sitemap
+                </p>
                 </div>
             </div>
         </div>
     </footer>
-
 
 
     <!-- Scroll Up Button -->

@@ -36,22 +36,10 @@
             margin-top: 145px !important;
         }
 
-        /* .video-container {
-            padding: 0;
-            margin: 0;
-        }
-
-        iframe {
-            width: 100%;
-            height: 445px;
-           
-        } */
-
         .video-container2 {
             position: relative;
             width: 100%;
             padding-top: 36.20%;
-            /* Aspect ratio 16:9 */
             overflow: hidden;
         }
 
@@ -65,7 +53,6 @@
 
         /* Responsive breakpoints */
 
-        /* Small screens (mobile) */
         @media (max-width: 640px) {
             .video-container2 {
                 width: 100%;
@@ -73,7 +60,6 @@
             }
         }
 
-        /* Medium screens (tablets) */
         @media (min-width: 641px) and (max-width: 1024px) {
             .video-container2 {
                 width: 100%;
@@ -81,18 +67,12 @@
             }
         }
 
-
-
-        /* Extra large screens */
         @media (min-width: 1441px) {
             .video-container2 {
                 width: 100%;
                 margin: 0 auto;
             }
         }
-
-
-
 
 
         .about_text {
@@ -200,7 +180,7 @@
 
         .exp_i_d i {
             font-size: 70px;
-            color: rgba(255, 255, 255, .8);
+            color: #fff;
         }
 
         .exp_i_d h4 {
@@ -212,7 +192,7 @@
         }
 
         .exp_bg_red h3 {
-            color: rgba(255, 255, 255, .8);
+            color: #fff;
             font-size: 17px;
             line-height: 24px;
             margin-bottom: 0;
@@ -240,6 +220,7 @@
         .exp_i_d h4 span {
             padding: 10px 20px;
             margin: 10px 0px;
+            color: #fff;
         }
 
 
@@ -314,21 +295,34 @@
                 margin-bottom: 0px;
             }
 
+            .exp_bg_red {
+                padding: 30px 105px;
+            }
+
             .exp_bg_red .cl1::before {
                 display: none;
             }
 
             .exp_i_d {
-                margin: 10px 25px;
+                margin: 15px 25px;
             }
+
         }
 
-        @media (max-width:376px) {}
+        @media (max-width:376px) {
+            .exp_bg_red {
+                padding: 30px 75px;
+            }
+        }
 
         @media (max-width:321px) {
             .about_heading .about_h_bg h2 {
                 margin-bottom: 0px;
                 font-size: 35px;
+            }
+
+            .exp_bg_red {
+                padding: 30px 50px;
             }
         }
     </style>
@@ -368,7 +362,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -379,7 +373,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -448,15 +442,15 @@
                     <div class="col-md-12">
                         <div class="about_p_t text-center">
                             <p class="text-center">
-                                ECE Industries Ltd was established in 1945 and is one of the leading Indian Elevator
-                                Brands that encapsulates the legacy of Mr B.K.Birla with its trust and quality. With an
-                                integrated state-of-the-art manufacturing base in NCR including in-house R&D, ECE
+                                ABC Industries Ltd was established in 1900 and is one of the leading Indian Elevator
+                                Brands that encapsulates the legacy of Mr B.K.RAMAN with its trust and quality. With an
+                                integrated state-of-the-art manufacturing base in NCR including in-house R&D, ABC
                                 provides safe, sustainable and smart mobility solutions. We are recognized for our
                                 people and best-in-class customer experience.
                             </p>
                             <p class="text-center">
-                                ECE is the first to provide all its new generation elevators with smart, advanced
-                                diagnostic capability and real time monitoring. ECE Group Elevator Management (GEM)
+                                ABC is the first to provide all its new generation elevators with smart, advanced
+                                diagnostic capability and real time monitoring. ABC Group Elevator Management (GEM)
                                 provides facilities managers with the much-needed centralized control and transparency
                                 of operations.
                             </p>
@@ -557,7 +551,7 @@
                                 We can be counted on to deliver a smart IoT product, quality and transparent customer
                                 experience, within committed timelines, at a competitive price encapsulating the legacy
                                 of the
-                                <b>- B K Birla Group</b>
+                                <b>- B K RAMAN Group</b>
                             </p>
 
                         </div>
@@ -566,7 +560,7 @@
             </div>
         </section>
 
-        <section class="history">
+        <section class="history" id="history_01">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -640,9 +634,6 @@
         </section>
 
     </main>
-
-
-
     <footer>
         <div class="container  footer_upper">
             <div class="row">
@@ -653,7 +644,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -705,11 +696,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -722,8 +713,6 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -733,7 +722,7 @@
         <div class="container-flued footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
-                    <p>Copyright © 2025 <span>ECE Elevators</span> All rights reserved.</p>
+                    <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
                     <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
@@ -741,6 +730,7 @@
             </div>
         </div>
     </footer>
+
 
 
     <!-- Scroll Up Button -->

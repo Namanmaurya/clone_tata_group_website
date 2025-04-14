@@ -143,12 +143,17 @@
         }
 
         .fact_c_style img {
-
+            cursor: pointer;
             border-radius: 80%;
             min-width: auto;
             transition: all 0.3s ease 0s;
             border-right: 10px solid transparent;
             border-bottom: 10px solid transparent;
+        }
+
+        .fact_c_style img:hover {
+            border-bottom: 10px solid red;
+            border-right: 10px solid red;
         }
 
         /* .fact_c_style img:hover::after {
@@ -226,19 +231,33 @@
 
         }
 
+        .row.procedure-row {
+            counter-reset: featured-imagebox-procedure;
+        }
+
         .fact_c_style .process-num::before {
             position: absolute;
             counter-increment: featured-imagebox-procedure;
             content: counter(featured-imagebox-procedure, decimal-leading-zero) " ";
-            top: 8px;
+            top: 3px;
             z-index: 5;
             font-size: 24px;
-            left: 10px;
+            left: 3px;
             color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .tech_aqui_img img {
             width: 100%;
+        }
+
+        .ul_li_cards {
+            padding: 0px 30px;
         }
 
 
@@ -254,6 +273,14 @@
 
             .factory_hero_section {
                 margin-top: 125px;
+            }
+
+            .factory_card_section {
+                padding: 30px 0px;
+            }
+
+            .tech_aqui {
+                padding: 30px 0px;
             }
         }
 
@@ -302,7 +329,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -313,7 +340,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -446,7 +473,7 @@
                         <div class="fact_c_cards ">
 
                             <div class="fact_c_style">
-                                <img src="assets\Images\f_m_c_card_img1.jpg" class="img-fluid" alt="image">
+                                <img src="assets\Images\f_m_c_card_img2.jpg" class="img-fluid" alt="image">
 
                                 <div class="process-num">
                                 </div>
@@ -460,7 +487,7 @@
                         <div class="fact_c_cards my-5">
 
                             <div class="fact_c_style ">
-                                <img src="assets\Images\f_m_c_card_img1.jpg" class="img-fluid" alt="image">
+                                <img src="assets\Images\f_m_c_card_img3.jpg" class="img-fluid" alt="image">
 
                                 <div class="process-num">
                                 </div>
@@ -474,7 +501,7 @@
                         <div class="fact_c_cards">
 
                             <div class="fact_c_style">
-                                <img src="assets\Images\f_m_c_card_img1.jpg" class="img-fluid" alt="image">
+                                <img src="assets\Images\f_m_c_card_img4.jpg" class="img-fluid" alt="image">
 
                                 <div class="process-num">
                                 </div>
@@ -541,7 +568,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -593,11 +620,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -610,8 +637,6 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -621,7 +646,7 @@
         <div class="container-flued footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
-                    <p>Copyright © 2025 <span>ECE Elevators</span> All rights reserved.</p>
+                    <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
                     <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
@@ -629,6 +654,7 @@
             </div>
         </div>
     </footer>
+
 
 
     <!-- Scroll Up Button -->
@@ -651,6 +677,7 @@
         });
 
     </script>
+
 
 </body>
 

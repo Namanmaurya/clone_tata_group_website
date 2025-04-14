@@ -176,7 +176,7 @@
             display: inline-block;
             padding: 5px 10px;
             color: #EC1C24;
-            margin-bottom: 10px;
+            /* margin-bottom: 10px; */
             border: 1px solid #EC1C24;
             font-size: 14px;
             border-radius: 5px;
@@ -200,14 +200,81 @@
         .custom-full-width1 {
             width: 100%;
             margin-top: 0px;
-            padding-left: -1px;
-            padding-right: -1px;
+            padding-left: 0px !important;
+            padding-right: 0px !important;
         }
 
-        .form-check {
+        /* .form-check {
             margin-left: 15px !important;
+        } */
+
+        .search-bar {
+            margin: 20px 0;
         }
 
+        #jobSearch {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+
+        .career_button {
+            display: inline-block;
+            margin-left: 120px;
+        }
+
+        .career_button a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .career_button button {
+            position: relative;
+            margin-top: 40px;
+            padding: 5px 30px;
+            background-color: black;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            transition: color 0.3s ease;
+            z-index: 1;
+        }
+
+        .career_button button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #ed3b3e;
+            transition: left 0.3s ease-in-out;
+            z-index: 0;
+            color: black;
+            z-index: -1;
+        }
+
+        .career_button button:hover::after {
+            left: 0;
+
+        }
+
+        .career_button button:hover {
+            color: white;
+            z-index: 2;
+        }
+
+
+        .career_button button {
+            position: relative;
+            z-index: 1;
+        }
 
 
 
@@ -218,6 +285,15 @@
 
             .job_s_card {
                 display: inline-block;
+                padding: 20px 15px;
+            }
+
+            .btn_cp_m {
+                margin-left: 130px;
+            }
+
+            .career_button button {
+                margin-top: 0px;
             }
         }
 
@@ -233,7 +309,11 @@
 
         @media(max-width: 321px) {
             .job_s_card {
-                padding: 20px 10px;
+                padding: 20px 5px;
+            }
+
+            .btn_cp_m {
+                margin-left: 80px;
             }
         }
     </style>
@@ -363,7 +443,7 @@
                             <div class="title">
                                 <h2>Your Path to Success in the <b>Elevator Industry</b></h2>
                             </div>
-                            <p>At ECE we are not just in the business of moving people and goods; we are in the business
+                            <p>At ABC we are not just in the business of moving people and goods; we are in the business
                                 of
                                 elevating careers. As one of the leading companies in the field of building mobility
                                 solutions, you will become part of a community of passionate and motivated colleagues
@@ -377,7 +457,7 @@
                     <div class="col-md-12">
                         <div class="why_choose_us">
                             <div class="title">
-                                <h2>Why Choose <b>ECE</b></h2>
+                                <h2>Why Choose <b>ABC</b></h2>
                             </div>
                             <div class="row">
                                 <div class="col-md-6 my-2">
@@ -402,7 +482,7 @@
                                 <div class="col-md-6 my-2">
                                     <div class="why_choose_text text-center">
                                         <h4>Career Growth and Development</h4>
-                                        <p>We believe in investing in our people. When you join ECE, you are not just
+                                        <p>We believe in investing in our people. When you join ABC, you are not just
                                             getting a job; but embarking on a career journey. We offer extensive
                                             training, mentoring programs, and opportunities for professional
                                             development. Your growth is our priority, and we will provide you with the
@@ -460,11 +540,11 @@
             </div>
         </section>
 
-        <section class="career_search_mian">
+        <!-- <section class="career_search_mian">
             <div class="container">
                 <div class="career_search">
                     <div class="row ">
-                        <!-- Input Field -->
+                        
                         <div class="col-lg-8 col-md-8 col-12">
                             <div class="input-group">
                                 <span class="input-group-text">
@@ -474,7 +554,7 @@
                                 <input type="text" class="form-control" placeholder="Location">
                             </div>
                         </div>
-                        <!-- Button -->
+                        
                         <div class="col-lg-4 col-md-6 col-12">
                             <button class="btn btn-search w-100">
                                 FIND A JOB <span><i class="fa-solid fa-magnifying-glass"></i></span>
@@ -483,9 +563,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="job_search">
+        <!-- <section class="job_search">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -926,13 +1006,360 @@
                         </div>
                     </div>
                 </div>
+        </section> -->
+
+        <section class="job_search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="job_search_head_text">
+                            <div class="job_s_h_t_heading text-center">
+                                <h2>Jobs You May Be Interested In</h2>
+                            </div>
+                            <div class="job_s_h_t_prac text-center">
+                                <p>Elevate your career to new heights with ABC Elevators! Join our team of skilled
+                                    professionals dedicated to designing, building, and maintaining innovative elevator
+                                    solutions</p>
+                            </div>
+
+
+                            <div class="career_search">
+                                <div class="row">
+                                    <!-- Input Field -->
+                                    <div class="col-lg-8 col-md-6 col-12">
+                                        <div class="input-group">
+                                            <span class="input-group-text">
+                                                <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png"
+                                                    width="20" alt="location-icon">
+                                            </span>
+                                            <input type="text" class="form-control" id="locationInput"
+                                                placeholder="Location">
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <button class="btn btn-search w-100" onclick="filterJobs()">
+                                            FIND A JOB <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="jobList">
+                                <div class="job_s_card" data-location="Ghaziabad, Uttar Pradesh">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Safety And Quality</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Ghaziabad, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>29 January, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Noida, Uttar Pradesh">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Manager</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Operations Management</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Noida, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>15 February, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Delhi, India">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Software Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Software Development</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Delhi, India</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>20 March, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+                                <div class="job_s_card" data-location="Lucknow, Uttar Pradesh">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Safety And Quality</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Ghaziabad, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>29 January, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Mumbai">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Manager</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Operations Management</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Noida, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>15 February, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Delhi, India">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Software Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Software Development</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Delhi, India</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>20 March, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Bangalore">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Safety And Quality</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Ghaziabad, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>29 January, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Chennai">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Manager</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Operations Management</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Noida, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>15 February, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Kolkata">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Software Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Software Development</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Delhi, India</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>20 March, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Hyderabad">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Safety And Quality</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Ghaziabad, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>29 January, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Chandigarh">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Manager</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Operations Management</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Noida, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>15 February, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Indore, India">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Software Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Software Development</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Delhi, India</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>20 March, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Ghaziabad, Uttar Pradesh">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Engineer</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Safety And Quality</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Ghaziabad, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>29 January, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+
+                                <div class="job_s_card" data-location="Noida, Uttar Pradesh">
+                                    <div class="job_s_card_text_icon">
+                                        <h5>Manager</h5>
+                                        <span class="j_s_c_icon_text">
+                                            <i class="fa-solid fa-briefcase"></i>
+                                            <p>Operations Management</p>
+                                            <i class="fa-solid fa-location-dot"></i>
+                                            <p>Noida, Uttar Pradesh</p>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <p>15 February, 2025</p>
+                                        </span>
+                                        <div class="j_s_c_j_f">
+                                            <p>Full Time</p>
+                                        </div>
+                                    </div>
+                                    <div class="career_button">
+                                        <button><a href="#enquiry_form_id">Apply</a></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="job_s_card" data-location="Delhi, India">
+                                <div class="job_s_card_text_icon">
+                                    <h5>Software Engineer</h5>
+                                    <span class="j_s_c_icon_text">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                        <p>Software Development</p>
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <p>Delhi, India</p>
+                                        <i class="fa-solid fa-clock"></i>
+                                        <p>20 March, 2025</p>
+                                    </span>
+                                    <div class="j_s_c_j_f">
+                                        <p>Full Time</p>
+                                    </div>
+                                </div>
+                                <div class="career_button">
+                                    <button><a href="#enquiry_form_id">Apply</a></button>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </section>
 
         <section class="job_search_form">
             <div class="container">
                 <h2 class="text-center">Join <b>Our Team</b></h2>
                 <p class="text-center">Ready to elevate your career? Explore our current job openings and discover the
-                    opportunities that await you at ECE. Whether you are an engineer, technician, sales professional, or
+                    opportunities that await you at ABC. Whether you are an engineer, technician, sales professional, or
                     part of our support staff, there is a place for you here. We are looking for passionate individuals
                     who are eager to embark on a journey of innovation and excellence in the world of vertical
                     transportation.</p>
@@ -940,7 +1367,7 @@
             </div>
         </section>
 
-        <section class="enquiry_form">
+        <section class="enquiry_form" id="enquiry_form_id">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -948,21 +1375,21 @@
                             <h2> Upload Your <b> Resume</b></h2>
                             <form id="careerform1" method="post">
                                 <div class="row custom-row">
-                                    <div class="col-md-6 custom-col ">
+                                    <div class="col-md-4 custom-col ">
                                         <span class="text-input">
                                             <input type="text" class="form-control" placeholder="Name" name="name"
                                                 required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                                         </span>
 
                                     </div>
-                                    <div class="col-md-6 custom-col">
+                                    <div class="col-md-4 custom-col">
                                         <span class="text-input">
                                             <input type="email" class="form-control" placeholder="Email" name="email"
                                                 required>
                                         </span>
 
                                     </div>
-                                    <div class="col-md-6 custom-col">
+                                    <div class="col-md-4 custom-col">
                                         <span class="text-input">
                                             <input type="tel" name="contact" placeholder="Phone number"
                                                 class="form-control" pattern="\d{10}" maxlength="10" required
@@ -971,15 +1398,21 @@
                                         </span>
 
                                     </div>
-                                    <div class="col-md-6 custom-col">
+                                    <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Position"
-                                                name="position">
+                                            <select class="form-control option_s" name="position" required>
+                                                <option value="" disabled selected>Select a position</option>
+                                                <option value="Plant Manager">Plant Manager</option>
+                                                <option value="Production Manager">Production Manager</option>
+                                                <option value="Quality Control Manager">Quality Control Manager</option>
+                                                <option value="Operations Manager">Operations Manager</option>
+                                                <option value="Maintenance Manager">Maintenance Manager</option>
+                                                <option value="Supply Chain Manager">Supply Chain Manager</option>
 
+                                            </select>
                                         </span>
-
                                     </div>
-                                    <div class="col-md-6 custom-col">
+                                    <div class="col-md-4 custom-col">
                                         <span class="text-input">
                                             <select class="form-control option_s" name="select_city" required>
                                                 <option value="" disabled selected>Select a City</option>
@@ -996,29 +1429,29 @@
                                             </select>
                                         </span>
                                     </div>
-                                    <div class="col-md-6 custom-col">
+                                    <div class="col-md-4 custom-col">
                                         <span class="text-input">
                                             <select class="form-control option_s" name="department" required>
                                                 <option value="" disabled selected>Department</option>
-                                                <option value="mumbai">Accourits </option>
-                                                <option value="delhi">Administration </option>
-                                                <option value="bangalore">Design </option>
-                                                <option value="chennai">Dispatch</option>
-                                                <option value="kolkata">EDP</option>
-                                                <option value="hyderabad">Electronics</option>
-                                                <option value="pune">Finance & Accounts</option>
-                                                <option value="ahmedabad">Human Resource</option>
-                                                <option value="jaipur">Industrial Engineering</option>
-                                                <option value="lucknow">Installation</option>
-                                                <option value="">Maintenance </option>
-                                                <option value="">Operations</option>
-                                                <option value="">Planning</option>
-                                                <option value="">Production</option>
-                                                <option value="">Purchase</option>
-                                                <option value="">Quality</option>
-                                                <option value="">Sales</option>
-                                                <option value="">Sales & Marketing </option>
-                                                <option value="">Sales & Operation </option>
+                                                <option value="Accourits">Accourits </option>
+                                                <option value="Administration">Administration </option>
+                                                <option value="Design">Design </option>
+                                                <option value="Dispatch">Dispatch</option>
+                                                <option value="EDP">EDP</option>
+                                                <option value="Electronics">Electronics</option>
+                                                <option value="Finance & Accounts">Finance & Accounts</option>
+                                                <option value="Human Resource">Human Resource</option>
+                                                <option value="Industrial">Industrial Engineering</option>
+                                                <option value="Installation">Installation</option>
+                                                <option value="Maintenance">Maintenance </option>
+                                                <option value="Operations">Operations</option>
+                                                <option value="Planning">Planning</option>
+                                                <option value="Production">Production</option>
+                                                <option value="Purchase">Purchase</option>
+                                                <option value="Quality">Quality</option>
+                                                <option value="Sales">Sales</option>
+                                                <option value="Sales & Marketing">Sales & Marketing </option>
+                                                <option value="Sales & Operation">Sales & Operation </option>
                                             </select>
                                         </span>
                                     </div>
@@ -1031,8 +1464,8 @@
 
                                     <div class="col-md-12 custom-full-width1">
                                         <span class="text-input">
-                                        <!-- <input type="file" name="pdf" class="form-control" id="pdf" accept="application/pdf"> -->
-                                            <input type="file" class="form-control mt-2"  name="pdf"
+                                            <!-- <input type="file" name="pdf" class="form-control" id="pdf" accept="application/pdf"> -->
+                                            <input type="file" class="form-control mt-2" name="pdf"
                                                 accept="application/pdf" required>
                                         </span>
 
@@ -1052,8 +1485,8 @@
 
                                 </div>
 
-                                <div class="footer_button btn_m">
-                                    <button type="submit">Submit</button>
+                                <div class="footer_button m_left">
+                                    <button>Submit</button>
                                 </div>
 
 
@@ -1243,7 +1676,7 @@
                 </div>
                 <div class="col-md-8">
                     <div class="footer_text ">
-                        <p>ECE Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
+                        <p>ABC Elevators is not about Make in India, we are truly Indian in our ethos and commitment to
                             deliver technologically advanced products.</p>
                     </div>
                 </div>
@@ -1295,11 +1728,11 @@
                     </h3>
                     <div class="footer_nav_links">
                         <ul>
-                            <li><a href="credentials.php">Residential</a></li>
-                            <li><a href="credentials.php">Commercial</a></li>
-                            <li><a href="credentials.php">Hospitals</a></li>
-                            <li><a href="credentials.php">Hotel</a></li>
-                            <li><a href="credentials.php">Industry</a></li>
+                            <li><a href="credentials.php #factory_hero_sec">Residential</a></li>
+                            <li><a href="credentials.php #factory_hero_section_comercial">Commercial</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hospital">Hospitals</a></li>
+                            <li><a href="credentials.php #factory_hero_section_hotel">Hotel</a></li>
+                            <li><a href="credentials.php #factory_hero_section_industry">Industry</a></li>
                         </ul>
                     </div>
                 </div>
@@ -1312,8 +1745,6 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
-                            <li><a href="#">Virup Portal</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -1323,7 +1754,7 @@
         <div class="container-flued footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
-                    <p>Copyright © 2025 <span>ECE Elevators</span> All rights reserved.</p>
+                    <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
                     <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
@@ -1331,8 +1762,6 @@
             </div>
         </div>
     </footer>
-
-
 
     <!-- Scroll Up Button -->
     <button id="scrollUp" onclick="topFunction()" class="btn"><i class="fa-solid fa-arrow-up"></i></button>
@@ -1370,6 +1799,28 @@
                     });
                 });
         });
+    </script>
+    <script>
+        function filterJobs() {
+            // Get the search location input
+            const locationInput = document.getElementById("locationInput").value.toLowerCase();
+
+            // Get all job cards
+            const jobCards = document.querySelectorAll(".job_s_card");
+
+            // Loop through each job card and check if the location matches
+            jobCards.forEach(card => {
+                const jobLocation = card.getAttribute("data-location").toLowerCase();
+
+                // If the location matches the input (case-insensitive), show the card, otherwise hide it
+                if (jobLocation.includes(locationInput)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
     </script>
 
 </body>

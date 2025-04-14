@@ -43,10 +43,7 @@ h5 {
     font-weight: 500;
 }
 
-
-
 /* scroll btn */
-
 #scrollUp {
     position: fixed;
     bottom: 20px;
@@ -61,7 +58,6 @@ h5 {
     z-index: 5555;
 
 }
-
 
 /* Navbar */
 
@@ -299,7 +295,6 @@ h5 {
     display: block;
 }
 
-
 .navbar-brand1 img {
     width: 140px;
 }
@@ -490,7 +485,6 @@ h5 {
 
 }
 
-
 .section-title {
     position: relative;
     margin-bottom: 12px;
@@ -601,7 +595,7 @@ h5 {
 }
 
 .key_variable {
-    padding: 90px 0px;
+    padding: 40px 0px;
 }
 
 .card_w_i {
@@ -789,7 +783,6 @@ h5 {
 
 }
 
-
 /* our client section */
 
 .client-container {
@@ -919,7 +912,6 @@ h5 {
     color: white;
 }
 
-/* Icon Hover Effects */
 .icon.facebook:hover {
     background: #1877f2;
 }
@@ -958,9 +950,7 @@ h5 {
     opacity: 1;
 }
 
-
 /* testimonial section */
-
 
 .testimonia_Section {
     background-image: url(assets/Images/testimonial_bg.jpg);
@@ -1294,7 +1284,6 @@ h5 {
     margin-top: 140px;
 }
 
-
 .enquiry_form {
     padding: 20px 0px;
 
@@ -1463,6 +1452,11 @@ form {
     color: #002c42;
 }
 
+.m_left{
+    margin-left: 440px;
+}
+
+
 /* Company Overview Page */
 
 @media (max-width:1025px) {
@@ -1481,10 +1475,16 @@ form {
     form {
         padding: 20px 20px;
     }
+
+    .m_left {
+        margin-left: 350px;
+    }
 }
 
 
 @media (min-width: 769px) {
+
+    
     .navbar-nav .nav-btn {
         display: inline-block;
 
@@ -1507,6 +1507,9 @@ form {
     .login {
         margin-top: 155px;
     }
+
+    
+    
 
     
 
@@ -1789,7 +1792,7 @@ form {
     }
 
     .btn_m {
-        margin-left: 85px;
+        margin-left: 60px;
     }
 
     .enquiry_form {
@@ -1802,6 +1805,14 @@ form {
 
     .login {
         margin-top: 100px;
+    }
+
+    .faq_section .faq_text_center {
+        padding: 20px 0px;
+    }
+
+    .m_left{
+        margin-left: 65px;
     }
 
 
