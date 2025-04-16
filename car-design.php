@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Elevator Company</title>
+    <title>ABC Elevator Company</title>
     <link rel="icon" type="png" href="assets\Images\title_icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -401,7 +401,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -412,7 +412,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -456,13 +456,13 @@
                         <div class="col-md-12">
                             <div class="fac_h_sec_text text-center">
                                 <h1>
-                                    Car Design
+                                    Elevator Design
                                 </h1>
                                 <div class="hero_sec_link text-center">
                                     <span>
                                         <a href="index.php">Home</a>
                                     </span>
-                                    <span>Car Design</span>
+                                    <span>Elevator Design</span>
 
                                 </div>
                             </div>
@@ -660,7 +660,7 @@
     </main>
 
     <footer>
-        <div class="container  footer_upper">
+        <div class="container-fluid  footer_upper">
             <div class="row">
                 <div class="col-md-2">
                     <div class="footer-logo text-center">
@@ -686,7 +686,7 @@
             </div>
         </div>
 
-        <div class="container footer_down">
+        <div class="container-fluid footer_down">
             <div class="row">
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">
@@ -744,13 +744,14 @@
             </div>
 
         </div>
-        <div class="container-flued footer_last">
+        <div class="container-fluid footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
                     <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
-                    <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
+                    <p>Privary policy / Term & Condition / Sitemap
+                    </p>
                 </div>
             </div>
         </div>

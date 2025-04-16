@@ -1252,12 +1252,13 @@ h5 {
 
 .footer_last {
     background-color: #504f4f;
-    padding: 20px 0px;
+    padding: 5px 0px;
 }
 
 
 .copy_right P {
     color: rgba(255, 255, 255, .75) !important;
+    margin-bottom: 0px;
 }
 
 .copy_right P span {
@@ -1267,6 +1268,7 @@ h5 {
 .footer_link p {
     color: white;
     font-size: 16px;
+    margin-bottom: 0px !important;
 }
 
 .footer_link p a {

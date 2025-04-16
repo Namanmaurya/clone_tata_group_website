@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Elevator Company</title>
+    <title> ABC Elevator Company</title>
     <link rel="icon" type="png" href="assets\Images\title_icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -112,6 +112,10 @@
             overflow: hidden;
         }
 
+        .blog_card:hover .card-content a {
+            opacity: 1;
+        }
+
         .card-image {
             flex: 0 0 40%;
         }
@@ -126,6 +130,16 @@
             flex: 1;
             padding: 0px 20px;
         }
+
+        .card-content a {
+            color: red;
+            text-decoration: none;
+            opacity: 0;
+        }
+
+
+
+
 
         .card-category {
             color: #002b5b;
@@ -186,7 +200,7 @@
             color: white;
         }
 
-        
+
 
         @media (max-width:1025px) {
             .card-content {
@@ -205,12 +219,12 @@
             }
         }
 
-        @media (max-width: 426px){
-            .blog_section{
+        @media (max-width: 426px) {
+            .blog_section {
                 margin-top: 80px;
             }
 
-            
+
         }
     </style>
 </head>
@@ -249,7 +263,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -260,7 +274,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -329,7 +343,11 @@
                                                         crucial role in various industries, warehouses, and buildings,
                                                         facilitating the efficient movement of...
                                                     </p>
-                                                   
+
+                                                    <a href="blog_page_1.php" class="read_more">
+                                                        <h5>Read More..</h5>
+                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -355,11 +373,16 @@
                                                     <p class="card-date">NOVEMBER 2, 2023</p>
                                                     <p class="card-text">
                                                         Goods elevators, also known as freight elevators or cargo lifts,
-                                                        play a
-                                                        crucial role in various industries, warehouses, and buildings,
-                                                        facilitating the efficient movement of...
+                                                        are designed to transport heavy goods in warehouses, factories,
+                                                        and commercial buildings. Built for strength and safety, they
+                                                        reduce manual labor, improve efficiency, and prevent damage.
+                                                        These elevators are essential for smooth, reliable vertical
+                                                        movement of materials in various industries.
                                                     </p>
-                                                   
+
+                                                    <a href="blog_page_2.php" class="read_more">
+                                                        <h5>Read More..</h5>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -388,7 +411,11 @@
                                                         crucial role in various industries, warehouses, and buildings,
                                                         facilitating the efficient movement of...
                                                     </p>
-                                                   
+
+                                                    <a href="blog_page_3.php" class="read_more">
+                                                        <h5>Read More..</h5>
+                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -417,7 +444,11 @@
                                                         crucial role in various industries, warehouses, and buildings,
                                                         facilitating the efficient movement of...
                                                     </p>
-                                                   
+
+                                                    <a href="blog_page_4.php" class="read_more">
+                                                        <h5>Read More..</h5>
+                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -450,7 +481,11 @@
                                                         crucial role in various industries, warehouses, and buildings,
                                                         facilitating the efficient movement of...
                                                     </p>
-                                                   
+
+                                                    <a href="blog_page_5.php" class="read_more">
+                                                        <h5>Read More..</h5>
+                                                    </a>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -476,7 +511,7 @@
     </main>
 
     <footer>
-        <div class="container  footer_upper">
+        <div class="container-fluid  footer_upper">
             <div class="row">
                 <div class="col-md-2">
                     <div class="footer-logo text-center">
@@ -502,7 +537,7 @@
             </div>
         </div>
 
-        <div class="container footer_down">
+        <div class="container-fluid footer_down">
             <div class="row">
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">
@@ -560,13 +595,14 @@
             </div>
 
         </div>
-        <div class="container-flued footer_last">
+        <div class="container-fluid footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
                     <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
-                    <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
+                    <p>Privary policy / Term & Condition / Sitemap
+                    </p>
                 </div>
             </div>
         </div>

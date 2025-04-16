@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Elevator Company</title>
+    <title> ABC Elevator Company</title>
     <link rel="icon" type="png" href="assets\Images\title_icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- stylesheet -->
+
     <link rel="stylesheet" href="styles.css">
 
 
@@ -34,7 +35,7 @@
         .factory_hero_section {
             margin-top: 140px;
             width: 100%;
-            height: 202px;
+            height: 60px;
             background-image: url(assets/Images/factory_hero_bg.jpg);
             background-size: cover;
             background-position: center center;
@@ -49,7 +50,7 @@
         }
 
         .factory_hero_section .fac_h_sec_text {
-            padding: 56px 0px;
+            padding: 11px 0px;
         }
 
         .factory_hero_section .fac_h_sec_text h1 {
@@ -100,34 +101,67 @@
             background-color: #ed3b3e;
         }
 
-        .our_client_card {
-            margin: 20px 10px;
+
+        .blog_cards {
+            padding: 30px 0px;
         }
 
-        .our_client_card img {
-            width: 100%;
-            filter: grayscale(100%);
-            transition: transform 0.3s ease-in-out;
+        .card-text {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .d_e_blog_text h3 {
+            font-size: 35px;
+        }
+
+        .d_e_blog_img img {
+            width: 360px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        @media (max-width:1026px) {
+            .d_e_blog_text {
+                padding: 0px 55px;
+            }
 
         }
 
-        .our_client_card img:hover {
-            transform: scale(1.1);
-            filter: grayscale(0%);
-        }
-
-        @media (max-width: 769px) {
+        @media (max-width:769px) {
             .factory_hero_section {
-                margin-top: 125px;
+                margin-top: 127px;
+            }
+
+            .d_e_blog_text {
+                padding: 20px 0px;
+            }
+
+        }
+
+        @media (max-width: 426px) {
+            .factory_hero_section {
+                margin-top: 92px;
             }
         }
 
-        @media(max-width: 426px) {
-            .factory_hero_section {
-                margin-top: 90px;
+        @media (max-width: 376px) {
+            .d_e_blog_img img {
+                width: 350px;
+            }
+        }
+
+        @media (max-width: 321px) {
+            .d_e_blog_img img {
+                width: 280px;
+            }
+
+            .d_e_blog_text h3 {
+                font-size: 27px;
             }
         }
     </style>
+
 
 </head>
 
@@ -165,7 +199,7 @@
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -176,7 +210,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -212,6 +246,7 @@
     </div>
 
     <main>
+
         <!-- factory_hero_sectioin -->
         <section class="factory_hero_section">
             <div class="factory_hero_section_bg">
@@ -219,14 +254,11 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="fac_h_sec_text text-center">
-                                <h1>
-                                    Our Clients
-                                </h1>
                                 <div class="hero_sec_link text-center">
                                     <span>
-                                        <a href="index.php">Home</a>
+                                        <a href="blog.php">Blog</a>
                                     </span>
-                                    <span>Our Clients</span>
+                                    <span>Page 1st</span>
 
                                 </div>
                             </div>
@@ -235,95 +267,68 @@
                 </div>
             </div>
         </section>
-
-        <section class="ourclient">
+        <section class="d_e_blog">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-3 ">
-                        <div class="our_client_card">
-                            <img src="assets\Images\tata.png" alt="our_client">
+                <div class="blog_cards">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="d_e_blog_img">
+                                <img src="assets\Images\blog_card_img1.jpeg" alt="Freight Elevator">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\NTPC.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\vatika.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\unitech.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\shalby.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\SAIL.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\renaissance.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\oxirich.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\NTPC.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\oxirich.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\tata.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\vatika.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\tata.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\NTPC.png" alt="our_client">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="our_client_card">
-                            <img src="assets\Images\NTPC.png" alt="our_client">
+                        <div class="col-lg-8">
+                            <div class="d_e_blog_text">
+                                <h3>ABC Goods / Freight / Cargo
+                                    Elevators-Redefining
+                                    Vertical Mobility for Industrial Buildings
+                                    and Warehouses</h3>
+                                <p class="card-date">NOVEMBER 2, 2023</p>
+                                <p>
+                                    Goods elevators, also known as freight elevators or cargo lifts, are specialized
+                                    lifting systems designed specifically for the vertical transportation of goods,
+                                    materials, or heavy equipment within buildings. These elevators are commonly used in
+                                    factories, warehouses, retail stores, hospitals, and construction sites where the
+                                    movement of bulky or heavy items between floors is essential.
+
+                                    Unlike passenger elevators, goods elevators are built with a stronger structure to
+                                    handle large loads safely. They often feature reinforced walls, heavy-duty doors,
+                                    and non-slip floors. The materials used in their construction are chosen for
+                                    durability and the ability to withstand frequent loading and unloading, often with
+                                    the help of forklifts, trolleys, or pallet jacks.
+
+                                    Goods elevators come in various sizes and weight capacities, ranging from small
+                                    lifts for light materials to large-scale systems capable of moving several tons.
+                                    They can be manually or automatically operated and are often fitted with safety
+                                    mechanisms such as emergency stop buttons, overload indicators, and interlocking
+                                    doors to prevent accidents during use.
+
+                                    One of the key benefits of using goods elevators is improved operational efficiency.
+                                    Instead of manually carrying items up and down stairs or using less reliable means,
+                                    these elevators streamline the movement process, saving time, reducing labor costs,
+                                    and minimizing the risk of injury.
+
+                                    Additionally, goods elevators help protect fragile or valuable items from damage
+                                    during transport. In buildings with high storage demands or multiple levels, they
+                                    become an indispensable part of the infrastructure.
+
+                                    In summary, goods elevators are a crucial element in the logistics and operational
+                                    systems of many businesses. They contribute to safer, faster, and more efficient
+                                    handling of materials, supporting productivity and ensuring that heavy goods are
+                                    transported smoothly within a facility.
+                                </p>
+
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
     </main>
 
-
-
     <footer>
-        <div class="container  footer_upper">
+        <div class="container-fluid  footer_upper">
             <div class="row">
                 <div class="col-md-2">
                     <div class="footer-logo text-center">
@@ -349,7 +354,7 @@
             </div>
         </div>
 
-        <div class="container footer_down">
+        <div class="container-fluid footer_down">
             <div class="row">
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">
@@ -407,19 +412,18 @@
             </div>
 
         </div>
-        <div class="container-flued footer_last">
+        <div class="container-fluid footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
                     <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
-                    <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
+                    <p>Privary policy / Term & Condition / Sitemap
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
-
-
 
     <!-- Scroll Up Button -->
     <button id="scrollUp" onclick="topFunction()" class="btn"><i class="fa-solid fa-arrow-up"></i></button>
@@ -428,6 +432,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
+
+
 
 </body>
 
