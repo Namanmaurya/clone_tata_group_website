@@ -1,3 +1,16 @@
+<?php
+$host = 'localhost';
+$user = 'root';
+$pass = '';
+$dbname = 'feedback_db';
+
+$conn = new mysqli($host, $user, $pass, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +45,63 @@
         rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .feedback_section {
+            padding: 40px 0px;
+        }
+
+        .scroll-section {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px 0;
+
+        }
+
+        .feedback_section h2 {
+            font-weight: 400;
+            font-size: 45px;
+            line-height: 50px;
+            color: #002c42;
+            margin-bottom: 30px;
+
+        }
+
+        .scroll-track {
+            display: flex;
+            animation: slide 60s linear infinite;
+            width: max-content;
+        }
+
+        .feedback_card {
+            width: 18rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+            border-radius: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback_card-body {
+            padding: 20px 30px;
+        }
+
+        .feedback_card-body i{
+            font-size: 20px;
+            color: red;
+            padding: 0px 2px;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -95,8 +165,8 @@
     </div>
 
 
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg fixed-navbar">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-navbar">
         <div class="container">
             <a class="navbar-brand1" href="index.php">
                 <img class="logo" src="assets/Images/ece-logo.png" alt="logo">
@@ -789,7 +859,49 @@
         <!-- feedback Section -->
 
         <section class="container-flued feedback_section">
-            
+            <h2 class="text-center mb-4">What People Say</h2>
+            <div class="scroll-section">
+                <div class="scroll-track" id="feedback-track">
+                    <?php
+                    $result = $conn->query("SELECT * FROM feedbacks ORDER BY created_at DESC");
+                    $feedbacks = [];
+                    $seenUsers = [];
+
+                    while ($row = $result->fetch_assoc()) {
+                        $key = $row['username'] . '|' . $row['email'] . '|' . $row['phone'];
+                        if (!isset($seenUsers[$key])) {
+                            $seenUsers[$key] = true;
+                            $feedbacks[] = $row;
+                        }
+                    }
+
+                    function renderFeedbackCards($feedbacks)
+                    {
+                        foreach ($feedbacks as $row) {
+                            echo '<div class="feedback_card feedback-card">
+                                    <div class="feedback_card-body">
+                                        <div class="mb-2">';
+                            for ($s = 0; $s < $row['rating']; $s++)
+                                echo '<i class="fa-solid fa-star" ></i>';
+                            echo '</div>
+                                        <h5 class="card-title">' . htmlspecialchars($row['username']) . '</h5>';
+
+                            $message = htmlspecialchars($row['message']);
+                            echo '<p class="card-text">' . $message . '</p>';
+
+                            echo '</div></div>';
+                        }
+                    }
+
+                    // First loop
+                    renderFeedbackCards($feedbacks);
+                    // Duplicate for infinite loop effect
+                    renderFeedbackCards($feedbacks);
+                    ?>
+                </div>
+            </div>
+
+
 
 
         </section>
@@ -944,6 +1056,8 @@
                 });
         });
     </script>
+
+
 
 
 </body>

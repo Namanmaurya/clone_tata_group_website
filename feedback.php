@@ -330,7 +330,7 @@
 
                                     <div class="col-md-12 custom-full-width">
                                         <span class="text-input">
-                                            <textarea class="form-control" rows="4" placeholder="Message" name="massage"
+                                            <textarea class="form-control" rows="4" placeholder="Message" name="massage" maxlength="200"
                                                 required></textarea>
                                         </span>
                                     </div>
