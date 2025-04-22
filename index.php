@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,11 +45,13 @@
                 <div class="card-body">
                     <h3>Get a Free Consultation</h3>
                     <p>
-                    Our expert evaluates your space, understands your requirements, and offers personalized recommendations.
+                        Our expert evaluates your space, understands your requirements, and offers personalized
+                        recommendations.
                     </p>
                     <form id="contactForm" method="post">
                         <div class="form-group">
-                            <input type="text" class="styled-input" id="name" name="name" placeholder="Name" required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                            <input type="text" class="styled-input" id="name" name="name" placeholder="Name" required
+                                oninput="this.value = this.value.replace(/[0-9]/g, '')">
                         </div>
                         <div class="form-group">
                             <input type="email" class="styled-input" id="email" name="email" placeholder="Email"
@@ -94,8 +95,8 @@
     </div>
 
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-navbar">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg fixed-navbar">
         <div class="container">
             <a class="navbar-brand1" href="index.php">
                 <img class="logo" src="assets/Images/ece-logo.png" alt="logo">
@@ -105,7 +106,7 @@
                 <div class="navbtn">
                     <button class="nav-btn"><img src="assets/Images/footer_user.png" alt="user"> 18005320323</button>
                     <a href="enquiry_new.php"><button class="nav-btn">ENQUIRY NOW</button></a>
-                    <a href="feedback.php" target="_blank"><button class="nav-btn">FEEDBACK</button></a>
+                    <a href="feedback.php"><button class="nav-btn">FEEDBACK</button></a>
 
                 </div>
 
@@ -232,7 +233,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="p_text text-center">The Internet of Things (IoT) and Artificial Intelligence (AI) integrated with a Cloud Server enable real-time communication, health monitoring, and SMART diagnostics. ABC Elevators is the FIRST in the country to offer this advanced capability as a standard feature in our SMART Elevators.</p>
+                        <p class="p_text text-center">The Internet of Things (IoT) and Artificial Intelligence (AI)
+                            integrated with a Cloud Server enable real-time communication, health monitoring, and SMART
+                            diagnostics. ABC Elevators is the FIRST in the country to offer this advanced capability as
+                            a standard feature in our SMART Elevators.</p>
                         <div class="row">
                             <div class="col-md-4 ">
                                 <div class="card">
@@ -393,7 +397,9 @@
         <section class="key_variable">
             <div class="container">
                 <h2 class="text-center">Key <b> Verticals</b></h2>
-                <p class="text-center">ABC Elevators serve all segments, with designs tailored to specific requirements. Whether for old and restored buildings or cutting-edge high-rise structures, our solutions are meticulously crafted for efficiency, innovation, and user-friendly operation.</p>
+                <p class="text-center">ABC Elevators serve all segments, with designs tailored to specific requirements.
+                    Whether for old and restored buildings or cutting-edge high-rise structures, our solutions are
+                    meticulously crafted for efficiency, innovation, and user-friendly operation.</p>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="card_w_i">
@@ -779,6 +785,15 @@
             </div>
         </section>
 
+
+        <!-- feedback Section -->
+
+        <section class="container-flued feedback_section">
+            
+
+
+        </section>
+
     </main>
 
     <footer>
@@ -860,6 +875,7 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                         </ul>
                     </div>
                 </div>
@@ -890,34 +906,45 @@
     <script src="index.js"></script>
 
     <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); 
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault();
             let formData = new FormData(this);
 
             fetch("model_form.php", {
                 method: "POST",
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                Swal.fire({
-                    icon: data.success ? 'success' : 'error',
-                    title: data.success ? 'Success!' : 'Error!',
-                    text: data.message,
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Submitted Successfully!',
+                            text: 'Your data submitted successfully. We will contact you shortly for the confirmation.',
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK'
+                        });
+                        document.getElementById("contactForm").reset();
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Submission Failed!',
+                            text: data.message || 'Please try again later.',
+                            confirmButtonColor: '#d33'
+                        });
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'Something went wrong. Please try again.',
+                        confirmButtonColor: '#d33'
+                    });
                 });
-                if (data.success) {
-                    document.getElementById("contactForm").reset();
-                }
-            })
-            .catch(error => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error!',
-                    text: 'Something went wrong. Please try again.',
-                });
-            });
         });
     </script>
+
 
 </body>
 

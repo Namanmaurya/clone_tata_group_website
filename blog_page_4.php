@@ -112,6 +112,10 @@
             color: #555;
         }
 
+        .d_e_blog_text{
+            padding: 0px 10px;
+        }
+
         .d_e_blog_text h3 {
             font-size: 35px;
         }
@@ -180,7 +184,7 @@
                 <div class="navbtn">
                     <button class="nav-btn"><img src="assets/Images/footer_user.png" alt="user"> 18005320323</button>
                     <a href="enquiry_new.php"><button class="nav-btn">ENQUIRY NOW</button></a>
-                    <a href="feedback.php" target="_blank"><button class="nav-btn">FEEDBACK</button></a>
+                    <a href="feedback.php"><button class="nav-btn">FEEDBACK</button></a>
 
                 </div>
 
@@ -407,6 +411,7 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                         </ul>
                     </div>
                 </div>

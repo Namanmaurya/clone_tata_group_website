@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -156,6 +155,15 @@
             height: 315px;
         }
 
+        .s_t_a_text_none{
+            color: red;
+        }
+
+        .s_t_a_text_none:hover{
+            color: red;
+            text-decoration: none;
+        }
+
         /* Small devices (up to 576px) */
         @media (max-width: 576px) {
             .responsive-iframe {
@@ -204,8 +212,8 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-navbar">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg fixed-navbar">
         <div class="container">
             <a class="navbar-brand1" href="index.php">
                 <img class="logo" src="assets/Images/ece-logo.png" alt="logo">
@@ -215,7 +223,7 @@
                 <div class="navbtn">
                     <button class="nav-btn"><img src="assets/Images/footer_user.png" alt="user"> 18005320323</button>
                     <a href="enquiry_new.php"><button class="nav-btn">ENQUIRY NOW</button></a>
-                    <a href="feedback.php" target="_blank"><button class="nav-btn">FEEDBACK</button></a>
+                    <a href="feedback.php"><button class="nav-btn">FEEDBACK</button></a>
 
                 </div>
 
@@ -317,7 +325,7 @@
             </div>
         </div>
 
-        <section class="s_t_about_section" >
+        <section class="s_t_about_section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -365,13 +373,15 @@
                                 <div class="row custom-row">
                                     <div class="col-md-4 custom-col ">
                                         <span class="text-input">
-                                            <input type="text" class="form-control" placeholder="Name" name="name" required oninput="this.value = this.value.replace(/[0-9]/g, '')">
+                                            <input type="text" class="form-control" placeholder="Name" name="name"
+                                                required oninput="this.value = this.value.replace(/[0-9]/g, '')">
                                         </span>
 
                                     </div>
                                     <div class="col-md-4 custom-col">
                                         <span class="text-input">
-                                            <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                            <input type="email" class="form-control" name="email" placeholder="Email"
+                                                required>
                                         </span>
 
                                     </div>
@@ -713,34 +723,41 @@
                         <div class="ser_st_cards">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <div class="st_card">
-                                        <i class="ttm-num ti-info"></i>
-                                        <div class="st_card_icon">
-                                            <img src="assets\Images\corporation_sev_img.png" alt="icon"
-                                                class="img-flued">
+
+                                    <a href="smart_tech_services_page1.php" class="s_t_a_text_none">
+                                        <div class="st_card">
+                                            <i class="ttm-num ti-info"></i>
+                                            <div class="st_card_icon">
+                                                <img src="assets\Images\corporation_sev_img.png" alt="icon"
+                                                    class="img-flued">
+                                            </div>
+                                            <h5>Office/Commercial Elevators</h5>
                                         </div>
-                                        <h5>Office/Commercial Elevators</h5>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="st_card">
+                                    
+                                    <a href="smart_tech_services_page2.php" class="s_t_a_text_none"><div class="st_card">
                                         <i class="ttm-num ti-info"></i>
                                         <div class="st_card_icon">
                                             <img src="assets\Images\hotel_sev_img.png" alt="icon" class="img-flued">
                                         </div>
                                         <h5>Residential/Home Elevators</h5>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="st_card">
+                                    
+                                    <a href="smart_tech_services_page3.php" class="s_t_a_text_none"><div class="st_card">
                                         <i class="ttm-num ti-info"></i>
                                         <div class="st_card_icon">
                                             <img src="assets\Images\hospital_sev_img.png" alt="icon" class="img-flued">
                                         </div>
                                         <h5>Hospital Elevators</h5>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <div class="col-md-3">
+                                    
+                                    <a href="smart_tech_services_page4.php" class="s_t_a_text_none">
                                     <div class="st_card">
                                         <i class="ttm-num ti-info"></i>
                                         <div class="st_card_icon">
@@ -748,26 +765,29 @@
                                         </div>
                                         <h5>Hotel Elevator</h5>
                                     </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="st_card">
+                                    <a href="smart_tech_services_page5.php" class="s_t_a_text_none"><div class="st_card">
                                         <i class="ttm-num ti-info"></i>
                                         <div class="st_card_icon">
                                             <img src="assets\Images\factory_ser_img.png" alt="icon" class="img-flued">
                                         </div>
                                         <h5>Industrial Elevators</h5>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <div class="col-md-3">
-                                    <div class="st_card">
+                                    
+                                    <a href="smart_tech_services_page6.php" class="s_t_a_text_none"><div class="st_card">
                                         <i class="ttm-num ti-info"></i>
                                         <div class="st_card_icon">
                                             <img src="assets\Images\lift_ser_img.png" alt="icon" class="img-flued">
                                         </div>
                                         <h5>Escalators</h5>
-                                    </div>
+                                    </div></a>
                                 </div>
                                 <div class="col-md-3">
+                                    <a href="smart_tech_services_page7.php" class="s_t_a_text_none">
                                     <div class="st_card">
                                         <i class="ttm-num ti-info"></i>
                                         <div class="st_card_icon">
@@ -776,6 +796,7 @@
                                         </div>
                                         <h5>Automobile Elevators</h5>
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -909,7 +930,7 @@
 
     </main>
     <footer>
-        <div class="container  footer_upper">
+        <div class="container-fluid  footer_upper">
             <div class="row">
                 <div class="col-md-2">
                     <div class="footer-logo text-center">
@@ -935,7 +956,7 @@
             </div>
         </div>
 
-        <div class="container footer_down">
+        <div class="container-fluid footer_down">
             <div class="row">
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">
@@ -987,20 +1008,21 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class="container-flued footer_last">
+        <div class="container-fluid footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
                     <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
-                <p>Privary policy / Term & Condition / Sitemap
-                </p>
+                    <p>Privary policy / Term & Condition / Sitemap
+                    </p>
                 </div>
             </div>
         </div>
@@ -1016,32 +1038,32 @@
     <script src="index.js"></script>
 
     <script>
-        document.getElementById("enquiryForm").addEventListener("submit", function(event) {
-            event.preventDefault(); 
+        document.getElementById("enquiryForm").addEventListener("submit", function (event) {
+            event.preventDefault();
             let formData = new FormData(this);
 
             fetch("pro_enquiry_form.php", {
                 method: "POST",
                 body: formData
             })
-            .then(response => response.json())
-            .then(data => {
-                Swal.fire({
-                    icon: data.success ? 'success' : 'error',
-                    title: data.success ? 'Success!' : 'Error!',
-                    text: data.message,
+                .then(response => response.json())
+                .then(data => {
+                    Swal.fire({
+                        icon: data.success ? 'success' : 'error',
+                        title: data.success ? 'Success!' : 'Error!',
+                        text: data.message,
+                    });
+                    if (data.success) {
+                        document.getElementById("enquiryForm").reset();
+                    }
+                })
+                .catch(error => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error!',
+                        text: 'Something went wrong. Please try again.',
+                    });
                 });
-                if (data.success) {
-                    document.getElementById("enquiryForm").reset();
-                }
-            })
-            .catch(error => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error!',
-                    text: 'Something went wrong. Please try again.',
-                });
-            });
         });
     </script>
 </body>

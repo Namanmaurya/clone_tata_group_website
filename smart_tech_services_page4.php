@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ABC Elevator Company</title>
+    <title>ABC Elevator Company</title>
     <link rel="icon" type="png" href="assets\Images\title_icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -31,143 +31,55 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
-        .factory_hero_section {
-            margin-top: 140px;
+        .s_t_s_p1_main_section {
+            margin-top: 150px;
+        }
+
+        .s_t_s_image_card {
+            overflow: hidden;
+        }
+
+        .s_t_s_image_card img {
             width: 100%;
-            height: 202px;
-            background-image: url(assets/Images/factory_hero_bg.jpg);
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-
-
         }
 
-        .factory_hero_section .factory_hero_section_bg {
-            opacity: 0.88;
-            background-color: #222d35;
+        .s_t_s_text_card h3 {
+            font-size: 30px;
+            font-weight: 600;
+            color: red;
         }
 
-        .factory_hero_section .fac_h_sec_text {
-            padding: 56px 0px;
-        }
+        @media (max-width:769px) {
+            /* .s_t_s_image_card img {
+                width: 150px;
+            } */
 
-        .factory_hero_section .fac_h_sec_text h1 {
-            font-weight: 700;
-            text-transform: capitalize;
-            font-size: 44px;
-            line-height: 54px;
-            display: inline-block;
-            margin-bottom: 0;
-            color: #fff;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link {
-            display: flex;
-            justify-content: center;
-            padding: 9px 0px;
-
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span {
-            color: white;
-            font-weight: 400;
-            text-transform: capitalize;
-            font-size: 15px;
-            line-height: 20px;
-            position: relative;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span a {
-            color: white;
-            text-decoration: none
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span:first-child {
-            padding-right: 24px;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span:first-child::after {
-            position: absolute;
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            right: 10px;
-            top: 6px;
-            display: inline-block;
-            font-style: normal;
-            background-color: #ed3b3e;
-        }
-
-        .industry-card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .industry-card img {
-            height: 200px;
-            border-radius: 10px;
-            object-fit: cover;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .industry-card:hover {
-            transform: scale(1.05);
-        }
-
-        .industry-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .read-more {
-            display: block;
-            margin-top: 10px;
-            font-weight: 400;
-            text-decoration: none;
-            color: black;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .read-more:hover {
-            color: white;
-        }
-
-        .row.g-4 {
-            row-gap: 20px;
-        }
-
-        .card:hover a {
-            color: white;
-        }
-
-        .industry h2 {
-            font-weight: 400;
-            font-size: 45px;
-            line-height: 50px;
-            color: #002c42;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 769px) {
-            .factory_hero_section {
-                margin-top: 125px;
+            .s_t_s_p1_main_section {
+                margin-top: 140px;
             }
         }
 
-        @media (max-width: 426px) {
-            .factory_hero_section {
-                margin-top: 92px;
+        @media (max-width:426px) {
+            .s_t_s_p1_main_section {
+                margin-top: 100px;
+            }
+
+            .s_t_s_text_card{
+                padding-top: 25px;
             }
         }
     </style>
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-navbar">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg fixed-navbar">
         <div class="container">
             <a class="navbar-brand1" href="index.php">
                 <img class="logo" src="assets/Images/ece-logo.png" alt="logo">
@@ -191,14 +103,14 @@
         </div>
     </nav>
 
-  <!-- Side Navigation Menu -->
-  <div id="sideNav" class="sidenav">
+    <!-- Side Navigation Menu -->
+    <div id="sideNav" class="sidenav">
         <button class="close-btn" onclick="toggleSideNav()"><i class="fa-solid fa-xmark"></i></button>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -209,7 +121,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -245,113 +157,46 @@
     </div>
 
     <main>
-        <!-- factory_hero_sectioin -->
-        <section class="factory_hero_section">
-            <div class="factory_hero_section_bg">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="fac_h_sec_text text-center">
-                                <h1>
-                                    Applications
-                                </h1>
-                                <div class="hero_sec_link text-center">
-                                    <span>
-                                        <a href="index.php">Home</a>
-                                    </span>
-                                    <span>Applications</span>
-
-                                </div>
-                            </div>
+        <section class="s_t_s_p1_main_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="s_t_s_image_card">
+                            <img src="assets\Images\s_t_s_pg4.jpeg" alt="icon" class="img-flued">
                         </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="s_t_s_text_card">
+                            <h3>Hotel Elevators:</h3>
+
+                            <p>Hotel elevators are a vital part of the hospitality infrastructure, designed not only for functional efficiency but also to enhance the guest experience. Unlike standard commercial elevators, hotel elevators are tailored to reflect the elegance, comfort, and convenience expected in a hospitality environment. They serve a wide range of users—from guests and hotel staff to luggage carts and service personnel—ensuring seamless vertical movement across multiple floors of a hotel.</p>
+
+                            <h4>Purpose and Importance:</h4>
+                            <p>In hotels, elevators do more than just transport people; they are a key touchpoint in the guest’s journey. From the moment guests enter the hotel, the elevator experience should reflect the level of service, safety, and sophistication the hotel promises. Elevators help move guests to their rooms, enable staff to perform housekeeping duties, and facilitate room service deliveries. In high-rise hotels, they are especially critical to ensure quick and reliable access to different levels.</p>
+
+                            <h4>Key Features of Hotel Elevators</h4>
+
+                            <p><strong></strong>Aesthetic Design: Hotel elevators are often luxuriously designed with high-end materials like glass, mirrors, stainless steel, wood panels, or even marble finishes. Lighting and music inside the elevator cabin also contribute to a relaxing and premium atmosphere.</p>
+                            <p><strong></strong>Speed and Efficiency: Modern hotel elevators are equipped with intelligent control systems to reduce waiting times, especially during peak check-in and check-out hours.</p>
+                            <p><strong></strong>Capacity and Size: Passenger elevators in hotels are generally mid-sized (8-13 people), while service elevators are larger to accommodate housekeeping carts, laundry bins, and room service trolleys.</p>
+                            <p><strong></strong>Quiet Operation: Elevators in hotels must operate silently and smoothly to avoid disturbing guests, especially at night.</p>
+                            <p><strong></strong>Touchless and Smart Controls: Many upscale hotels are adopting touchless technologies, like RFID card access, mobile app-based controls, and voice-activated elevators for enhanced safety and convenience.</p>
+                            <p><strong></strong>Security Systems: Elevator access may be restricted based on floor levels using keycard authentication to ensure guest privacy and safety. For example, only guests with access cards for a certain floor can reach those levels.</p>
+
+                            <h4>Types of Hotel Elevators</h4>
+                            <p><strong>Passenger Elevators:</strong> These are the main elevators used by guests. They are designed with aesthetics and comfort in mind.</p>
+                            <p><strong>Service Elevators:</strong>Service Elevators: These are used by hotel staff for operational needs and are often located out of public view.</p>
+                            <p><strong>Panoramic Elevators:</strong> Often found in luxury hotels, these glass elevators offer scenic views of the lobby, atrium, or surrounding areas, enhancing the overall guest experience.</p>
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="industry">
-            <div class="container py-5">
-                <h2 class="text-center mb-4">Elevate to <b>Smart</b></h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-office-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Office Elevator</h5>
-                                <p class="card-text">Commercial office building elevator systems must be configured to
-                                    match the expected traffic requirements both present and future.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-hotel-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Hotel Elevator</h5>
-                                <p class="card-text">Hotels need elevators that deliver high performance, have low
-                                    break- downs , smooth operation and have beautiful aesthetics.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\automobile-elevator-website.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Automobile Elevator</h5>
-                                <p class="card-text">Automobile elevators are used in parking structures, apartment
-                                    suits, auto dealership and even homes as well.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\industrial-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Industrial Elevator</h5>
-                                <p class="card-text">ECE holds the expertise of catering to the industrial elevators
-                                    building needs, be it the high travel elevator requirement,</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ECE-Escalator.jpeg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">ECE Escalator</h5>
-                                <p class="card-text">ECE-Sword Escalators and Travellators are the best suited for
-                                    portability situations for expensive open spaces with high activity…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ECE-Residential-Elevator.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Residential</h5>
-                                <p class="card-text">ECE Elevators bring convenience at your door step. They are
-                                    luxurious, spacious and provide safety and reliability. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-hospital-elevator.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Hospital Elevator</h5>
-                                <p class="card-text">Generally, hospital elevators have requirements as laid down by the
-                                    operating authorities of the hospital. Elevators will be required for patients,</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
     </main>
+
 
     <footer>
         <div class="container-fluid  footer_upper">
@@ -460,6 +305,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
+
+
+
+
 
 </body>
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ABC Elevator Company</title>
+    <title>ABC Elevator Company</title>
     <link rel="icon" type="png" href="assets\Images\title_icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -31,137 +31,49 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
-        .factory_hero_section {
-            margin-top: 140px;
+        .s_t_s_p1_main_section {
+            margin-top: 150px;
+        }
+
+        .s_t_s_image_card {
+            overflow: hidden;
+        }
+
+        .s_t_s_image_card img {
             width: 100%;
-            height: 202px;
-            background-image: url(assets/Images/factory_hero_bg.jpg);
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-
-
         }
 
-        .factory_hero_section .factory_hero_section_bg {
-            opacity: 0.88;
-            background-color: #222d35;
+        .s_t_s_text_card h3 {
+            font-size: 30px;
+            font-weight: 600;
+            color: red;
         }
 
-        .factory_hero_section .fac_h_sec_text {
-            padding: 56px 0px;
-        }
+        @media (max-width:769px) {
+            /* .s_t_s_image_card img {
+                width: 150px;
+            } */
 
-        .factory_hero_section .fac_h_sec_text h1 {
-            font-weight: 700;
-            text-transform: capitalize;
-            font-size: 44px;
-            line-height: 54px;
-            display: inline-block;
-            margin-bottom: 0;
-            color: #fff;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link {
-            display: flex;
-            justify-content: center;
-            padding: 9px 0px;
-
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span {
-            color: white;
-            font-weight: 400;
-            text-transform: capitalize;
-            font-size: 15px;
-            line-height: 20px;
-            position: relative;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span a {
-            color: white;
-            text-decoration: none
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span:first-child {
-            padding-right: 24px;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span:first-child::after {
-            position: absolute;
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            right: 10px;
-            top: 6px;
-            display: inline-block;
-            font-style: normal;
-            background-color: #ed3b3e;
-        }
-
-        .industry-card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .industry-card img {
-            height: 200px;
-            border-radius: 10px;
-            object-fit: cover;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .industry-card:hover {
-            transform: scale(1.05);
-        }
-
-        .industry-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .read-more {
-            display: block;
-            margin-top: 10px;
-            font-weight: 400;
-            text-decoration: none;
-            color: black;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .read-more:hover {
-            color: white;
-        }
-
-        .row.g-4 {
-            row-gap: 20px;
-        }
-
-        .card:hover a {
-            color: white;
-        }
-
-        .industry h2 {
-            font-weight: 400;
-            font-size: 45px;
-            line-height: 50px;
-            color: #002c42;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 769px) {
-            .factory_hero_section {
-                margin-top: 125px;
+            .s_t_s_p1_main_section {
+                margin-top: 140px;
             }
         }
 
-        @media (max-width: 426px) {
-            .factory_hero_section {
-                margin-top: 92px;
+        @media (max-width:426px) {
+            .s_t_s_p1_main_section {
+                margin-top: 100px;
+            }
+
+            .s_t_s_text_card {
+                padding-top: 25px;
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -191,14 +103,14 @@
         </div>
     </nav>
 
-  <!-- Side Navigation Menu -->
-  <div id="sideNav" class="sidenav">
+    <!-- Side Navigation Menu -->
+    <div id="sideNav" class="sidenav">
         <button class="close-btn" onclick="toggleSideNav()"><i class="fa-solid fa-xmark"></i></button>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -209,7 +121,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -245,113 +157,74 @@
     </div>
 
     <main>
-        <!-- factory_hero_sectioin -->
-        <section class="factory_hero_section">
-            <div class="factory_hero_section_bg">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="fac_h_sec_text text-center">
-                                <h1>
-                                    Applications
-                                </h1>
-                                <div class="hero_sec_link text-center">
-                                    <span>
-                                        <a href="index.php">Home</a>
-                                    </span>
-                                    <span>Applications</span>
-
-                                </div>
-                            </div>
+        <section class="s_t_s_p1_main_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="s_t_s_image_card">
+                            <img src="assets\Images\s_t_s_pg5.jpeg" alt="icon" class="img-flued">
                         </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="s_t_s_text_card">
+                            <h3>Industrial Elevators:</h3>
+
+                            <p>Industrial elevators are specialized vertical transportation systems designed to operate
+                                in rugged, demanding environments like factories, warehouses, power plants, construction
+                                sites, and manufacturing units. Unlike residential or commercial elevators that
+                                prioritize aesthetics and passenger comfort, industrial elevators focus on durability,
+                                high load capacity, safety, and efficiency.</p>
+
+                            <h4>Purpose and Application:</h4>
+                            <p>The primary purpose of industrial elevators is to move materials, equipment, and
+                                personnel vertically across multiple levels of industrial buildings or job sites. They
+                                are crucial for maintaining workflow continuity, reducing manual labor, and improving
+                                workplace safety. In industries such as oil and gas, mining, power generation,
+                                shipbuilding, and large-scale manufacturing, these elevators provide reliable access to
+                                otherwise hard-to-reach or elevated locations.</p>
+
+                            <h4>Key Features of Industrial Elevators</h4>
+                            <p><strong>Material Lifts:</strong> Used exclusively for transporting goods, not people.
+                                Common in warehouses, these lifts have high load capacities and durable platforms.</p>
+                            <p><strong>Personnel & Material Elevators:</strong> These dual-purpose lifts can carry both
+                                workers and equipment. Used on construction sites and in power plants.</p>
+                            <p><strong>Rack & Pinion Elevators:</strong> These operate without cables, using a gear
+                                system mounted on a mast. Known for their robustness and ability to function in outdoor
+                                and high-vibration conditions.</p>
+                            <p><strong>Hydraulic Elevators:</strong> Used in low-rise industrial facilities, hydraulic
+                                elevators offer powerful lifting with lower installation costs, although they are slower
+                                than other types.</p>
+                            <p><strong>Explosion-Proof Elevators:</strong>Explosion-Proof Elevators: Used in hazardous
+                                environments like chemical plants or refineries, these elevators are built with
+                                components that prevent sparks or explosions.</p>
+
+                            <h4>Types of Industrial Elevators</h4>
+                            <p><strong>Material Lifts:</strong> Used exclusively for transporting goods, not people.
+                                Common in warehouses, these lifts have high load capacities and durable platforms.</p>
+                            <p><strong>Personnel & Material Elevators:</strong> These dual-purpose lifts can carry both
+                                workers and equipment. Used on construction sites and in power plants.</p>
+                            <p><strong>Rack & Pinion Elevators:</strong> These operate without cables, using a gear
+                                system mounted on a mast. Known for their robustness and ability to function in outdoor
+                                and high-vibration conditions.</p>
+                            <p><strong>Hydraulic Elevators:</strong> Used in low-rise industrial facilities, hydraulic
+                                elevators offer powerful lifting with lower installation costs, although they are slower
+                                than other types.
+
+                            </p>
+                            <p><strong>Explosion-Proof Elevators:</strong> Used in hazardous environments like chemical
+                                plants or refineries, these elevators are built with components that prevent sparks or
+                                explosions.</p>
+
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="industry">
-            <div class="container py-5">
-                <h2 class="text-center mb-4">Elevate to <b>Smart</b></h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-office-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Office Elevator</h5>
-                                <p class="card-text">Commercial office building elevator systems must be configured to
-                                    match the expected traffic requirements both present and future.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-hotel-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Hotel Elevator</h5>
-                                <p class="card-text">Hotels need elevators that deliver high performance, have low
-                                    break- downs , smooth operation and have beautiful aesthetics.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\automobile-elevator-website.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Automobile Elevator</h5>
-                                <p class="card-text">Automobile elevators are used in parking structures, apartment
-                                    suits, auto dealership and even homes as well.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\industrial-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Industrial Elevator</h5>
-                                <p class="card-text">ECE holds the expertise of catering to the industrial elevators
-                                    building needs, be it the high travel elevator requirement,</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ECE-Escalator.jpeg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">ECE Escalator</h5>
-                                <p class="card-text">ECE-Sword Escalators and Travellators are the best suited for
-                                    portability situations for expensive open spaces with high activity…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ECE-Residential-Elevator.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Residential</h5>
-                                <p class="card-text">ECE Elevators bring convenience at your door step. They are
-                                    luxurious, spacious and provide safety and reliability. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-hospital-elevator.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Hospital Elevator</h5>
-                                <p class="card-text">Generally, hospital elevators have requirements as laid down by the
-                                    operating authorities of the hospital. Elevators will be required for patients,</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
     </main>
+
 
     <footer>
         <div class="container-fluid  footer_upper">
@@ -460,6 +333,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
+
+
+
+
 
 </body>
 

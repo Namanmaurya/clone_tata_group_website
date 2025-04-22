@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ABC Elevator Company</title>
+    <title>ABC Elevator Company</title>
     <link rel="icon" type="png" href="assets\Images\title_icon.png">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -31,143 +31,55 @@
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
-        .factory_hero_section {
-            margin-top: 140px;
+        .s_t_s_p1_main_section {
+            margin-top: 150px;
+        }
+
+        .s_t_s_image_card {
+            overflow: hidden;
+        }
+
+        .s_t_s_image_card img {
             width: 100%;
-            height: 202px;
-            background-image: url(assets/Images/factory_hero_bg.jpg);
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-
-
         }
 
-        .factory_hero_section .factory_hero_section_bg {
-            opacity: 0.88;
-            background-color: #222d35;
+        .s_t_s_text_card h3 {
+            font-size: 30px;
+            font-weight: 600;
+            color: red;
         }
 
-        .factory_hero_section .fac_h_sec_text {
-            padding: 56px 0px;
-        }
+        @media (max-width:769px) {
+            /* .s_t_s_image_card img {
+                width: 150px;
+            } */
 
-        .factory_hero_section .fac_h_sec_text h1 {
-            font-weight: 700;
-            text-transform: capitalize;
-            font-size: 44px;
-            line-height: 54px;
-            display: inline-block;
-            margin-bottom: 0;
-            color: #fff;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link {
-            display: flex;
-            justify-content: center;
-            padding: 9px 0px;
-
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span {
-            color: white;
-            font-weight: 400;
-            text-transform: capitalize;
-            font-size: 15px;
-            line-height: 20px;
-            position: relative;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span a {
-            color: white;
-            text-decoration: none
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span:first-child {
-            padding-right: 24px;
-        }
-
-        .factory_hero_section .fac_h_sec_text .hero_sec_link span:first-child::after {
-            position: absolute;
-            content: "";
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            right: 10px;
-            top: 6px;
-            display: inline-block;
-            font-style: normal;
-            background-color: #ed3b3e;
-        }
-
-        .industry-card {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .industry-card img {
-            height: 200px;
-            border-radius: 10px;
-            object-fit: cover;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .industry-card:hover {
-            transform: scale(1.05);
-        }
-
-        .industry-card:hover img {
-            transform: scale(1.1);
-        }
-
-        .read-more {
-            display: block;
-            margin-top: 10px;
-            font-weight: 400;
-            text-decoration: none;
-            color: black;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .read-more:hover {
-            color: white;
-        }
-
-        .row.g-4 {
-            row-gap: 20px;
-        }
-
-        .card:hover a {
-            color: white;
-        }
-
-        .industry h2 {
-            font-weight: 400;
-            font-size: 45px;
-            line-height: 50px;
-            color: #002c42;
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 769px) {
-            .factory_hero_section {
-                margin-top: 125px;
+            .s_t_s_p1_main_section {
+                margin-top: 140px;
             }
         }
 
-        @media (max-width: 426px) {
-            .factory_hero_section {
-                margin-top: 92px;
+        @media (max-width:426px) {
+            .s_t_s_p1_main_section {
+                margin-top: 100px;
+            }
+
+            .s_t_s_text_card {
+                padding-top: 25px;
             }
         }
     </style>
+
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-navbar">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg fixed-navbar">
         <div class="container">
             <a class="navbar-brand1" href="index.php">
                 <img class="logo" src="assets/Images/ece-logo.png" alt="logo">
@@ -191,14 +103,14 @@
         </div>
     </nav>
 
-  <!-- Side Navigation Menu -->
-  <div id="sideNav" class="sidenav">
+    <!-- Side Navigation Menu -->
+    <div id="sideNav" class="sidenav">
         <button class="close-btn" onclick="toggleSideNav()"><i class="fa-solid fa-xmark"></i></button>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >About Us</a>
+                    <a href="#" class="dropdown-toggle">About Us</a>
                     <ul class="dropdown-menu">
                         <li><a href="company_overview.php">Company Overview</a></li>
                         <li><a href="factory.php">Factory</a></li>
@@ -209,7 +121,7 @@
             </li>
             <li>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" >Products</a>
+                    <a href="#" class="dropdown-toggle">Products</a>
                     <ul class="dropdown-menu">
                         <li><a href="car-design.php">By Design</a></li>
                         <li><a href="products-technology.php">Category</a></li>
@@ -245,113 +157,66 @@
     </div>
 
     <main>
-        <!-- factory_hero_sectioin -->
-        <section class="factory_hero_section">
-            <div class="factory_hero_section_bg">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="fac_h_sec_text text-center">
-                                <h1>
-                                    Applications
-                                </h1>
-                                <div class="hero_sec_link text-center">
-                                    <span>
-                                        <a href="index.php">Home</a>
-                                    </span>
-                                    <span>Applications</span>
-
-                                </div>
-                            </div>
+        <section class="s_t_s_p1_main_section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="s_t_s_image_card">
+                            <img src="assets\Images\s_t_s_pg6.jpeg" alt="icon" class="img-flued">
                         </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="s_t_s_text_card">
+                            <h3>Escalators:</h3>
+
+                            <p>Escalators are mechanical moving staircases designed to transport people vertically
+                                between floors in buildings. They are a common feature in shopping malls, airports,
+                                metro stations, hotels, hospitals, and large commercial complexes, offering convenience,
+                                efficiency, and safety in high-traffic areas. Escalators combine the functionality of
+                                elevators with the continuous movement of stairs, allowing a steady stream of people to
+                                move up or down without waiting.
+
+                            </p>
+
+                            <h4>How Escalators Work:</h4>
+                            <p>An escalator consists of a motor-driven chain of individual steps that move on tracks in a loop. Each step remains horizontal while the entire mechanism moves, allowing people to stand comfortably. The escalator also includes handrails that move in sync with the steps to provide support and balance.</p>
+                            <p>Key components include:</p>
+                            <ul>
+                                <li><strong>Steps:</strong> Interlocked treads that form the moving staircase.</li>
+                                <li><strong>Handrails:</strong> Rubber or synthetic rails for user stability.</li>
+                                <li><strong>Drive Motor:</strong>Powers the movement of steps and handrails.</li>
+                                <li><strong>Track System:</strong> Guides the movement of steps in a continuous loop.</li>
+                                <li><strong>Balustrade:</strong> Protective side panels for safety and aesthetics.</li>
+                            </ul>
+
+
+                            <h4>Applications of Escalators</h4>
+                            <p>Escalators are ideal for moving large numbers of people quickly across short vertical distances. Their continuous motion and ability to accommodate many users at once make them perfect for:</p>
+
+                            <ul>
+                                <li><strong>Malls and department stores</strong></li>
+                                <li><strong>Train and subway stations</strong></li>
+                                <li><strong>Airports</strong></li>
+                                <li><strong>Public buildings</strong></li>
+                                <li><strong>Convention centers</strong></li>
+                                <li><strong>Sports stadiums and arenas</strong></li>
+                            </ul>
+                            <h4>Advantages of Escalators</h4>
+                            <p><strong>High Traffic Efficiency:</strong> Escalators can transport dozens of people simultaneously without waiting times, which is particularly useful in crowded public spaces.</p>
+                            <p><strong>Space Saving:</strong> While elevators require shaft spaces and can only carry a few people at a time, escalators can be installed in more open designs and operate continuously.</p>
+                            <p><strong>Accessibility:</strong> Escalators are easier to use for people carrying luggage or shopping bags, and those who prefer not to use stairs.</p>
+                            <p><strong>Aesthetic and Design Integration:</strong> Modern escalators can be incorporated into architectural designs using glass panels, lighting, and stainless steel finishes.</p>
+                            <p><strong>Low Wait Time:</strong> Unlike elevators that must travel to each user, escalators are always in motion, reducing wait time to zero.</p>
+
+
+                        </div>
+
                     </div>
                 </div>
             </div>
         </section>
-
-        <section class="industry">
-            <div class="container py-5">
-                <h2 class="text-center mb-4">Elevate to <b>Smart</b></h2>
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-office-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Office Elevator</h5>
-                                <p class="card-text">Commercial office building elevator systems must be configured to
-                                    match the expected traffic requirements both present and future.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-hotel-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Hotel Elevator</h5>
-                                <p class="card-text">Hotels need elevators that deliver high performance, have low
-                                    break- downs , smooth operation and have beautiful aesthetics.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\automobile-elevator-website.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Automobile Elevator</h5>
-                                <p class="card-text">Automobile elevators are used in parking structures, apartment
-                                    suits, auto dealership and even homes as well.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\industrial-elevator.jpg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Industrial Elevator</h5>
-                                <p class="card-text">ECE holds the expertise of catering to the industrial elevators
-                                    building needs, be it the high travel elevator requirement,</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ECE-Escalator.jpeg" class="card-img-top" alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">ECE Escalator</h5>
-                                <p class="card-text">ECE-Sword Escalators and Travellators are the best suited for
-                                    portability situations for expensive open spaces with high activity…</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ECE-Residential-Elevator.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Residential</h5>
-                                <p class="card-text">ECE Elevators bring convenience at your door step. They are
-                                    luxurious, spacious and provide safety and reliability. </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card industry-card">
-                            <img src="assets\Images\ece-hospital-elevator.jpg" class="card-img-top"
-                                alt="Industry Image">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Hospital Elevator</h5>
-                                <p class="card-text">Generally, hospital elevators have requirements as laid down by the
-                                    operating authorities of the hospital. Elevators will be required for patients,</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
     </main>
+
 
     <footer>
         <div class="container-fluid  footer_upper">
@@ -460,6 +325,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>
+
+
+
+
 
 </body>
 

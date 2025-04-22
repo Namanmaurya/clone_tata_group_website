@@ -144,7 +144,7 @@
                 <div class="navbtn">
                     <button class="nav-btn"><img src="assets/Images/footer_user.png" alt="user"> 18005320323</button>
                     <a href="enquiry_new.php"><button class="nav-btn">ENQUIRY NOW</button></a>
-                    <a href="feedback.php" target="_blank"><button class="nav-btn">FEEDBACK</button></a>
+                    <a href="feedback.php"><button class="nav-btn">FEEDBACK</button></a>
 
                 </div>
 
@@ -323,7 +323,7 @@
 
 
     <footer>
-        <div class="container  footer_upper">
+        <div class="container-fluid  footer_upper">
             <div class="row">
                 <div class="col-md-2">
                     <div class="footer-logo text-center">
@@ -349,7 +349,7 @@
             </div>
         </div>
 
-        <div class="container footer_down">
+        <div class="container-fluid footer_down">
             <div class="row">
                 <div class="col-md-3 widget">
                     <h3 class="widget-title">
@@ -401,19 +401,21 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class="container-flued footer_last">
+        <div class="container-fluid footer_last">
             <div class="col-md-12">
                 <div class="copy_right text-center">
                     <p>Copyright © 2025 <span>ABC Elevators</span> All rights reserved.</p>
                 </div>
                 <div class="footer_link text-center">
-                    <p><a href="">Privary policy</a> / <a href="">Term & Condition</a> / <a href="">Sitemap</a></p>
+                    <p>Privary policy / Term & Condition / Sitemap
+                    </p>
                 </div>
             </div>
         </div>

@@ -264,7 +264,7 @@
                 <div class="navbtn">
                     <button class="nav-btn"><img src="assets/Images/footer_user.png" alt="user"> 18005320323</button>
                     <a href="enquiry_new.php"><button class="nav-btn">ENQUIRY NOW</button></a>
-                    <a href="feedback.php" target="_blank"><button class="nav-btn">FEEDBACK</button></a>
+                    <a href="feedback.php"><button class="nav-btn">FEEDBACK</button></a>
 
                 </div>
 
@@ -381,13 +381,13 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-5 my-5">
+                    <div class="col-md-5 my-3">
                         <div class="faq_img_con">
                             <img src="assets\Images\faq-section_img1.jpg" alt="faq_section_img" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-md-1"></div>
-                    <div class="col-md-6 my-5">
+                    <div class="col-md-6 my-3">
                         <div class="faq-container">
                             <div class="faq-question" onclick="toggleFAQ(0)">
                                 <span>Why do elevators need maintenance?</span>
@@ -482,7 +482,7 @@
 
                     </div>
 
-                    <div class="col-md-6 my-5">
+                    <div class="col-md-6 my-3">
                         <div class="faq-container">
                             <div class="faq-question" onclick="toggleFAQ(7)">
                                 <span>Why do elevators need maintenance?</span>
@@ -576,21 +576,21 @@
 
                     </div>
                     <div class="col-md-1"></div>
-                    <div class="col-md-5 my-5">
+                    <div class="col-md-5 my-3">
                         <div class="faq_img_con">
                             <img src="assets\Images\faq-section_img2.jpg" alt="faq_section_img" class="img-fluid">
                         </div>
                     </div>
 
 
-                    <div class="col-md-5 my-5">
+                    <div class="col-md-5 my-3">
                         <div class="faq_img_con">
                             <img src="assets\Images\faq-section_img3.jpg" alt="faq_section_img" class="img-fluid">
                         </div>
                     </div>
                     <div class="col-md-1"></div>
 
-                    <div class="col-md-6 my-5">
+                    <div class="col-md-6 my-3">
 
                         <div class="faq-container">
                             <div class="faq-question" onclick="toggleFAQ(14)">
@@ -827,6 +827,7 @@
                             <li><a href="enquiry_new.php">Enquiry</a></li>
                             <li><a href="branches.php">Branches</a></li>
                             <li><a href="smart_technology.php">Smart Customer Connect</a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                         </ul>
                     </div>
                 </div>

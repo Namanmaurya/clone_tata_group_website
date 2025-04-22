@@ -39,8 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
 
-        $mail->setFrom('your-email@gmail.com', 'Your Name');
-        $mail->addAddress('your-email@gmail.com', 'Receiver Name');
+        $mail->setFrom('namanm0021@gmail.com', 'Naman kumar Maurya');
+        $mail->addAddress('namanm0021@gmail.com', 'Naman Kumar Maurya');
 
         $mail->isHTML(true);
         $mail->Subject = 'New Contact Form Submission';

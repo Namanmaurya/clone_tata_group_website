@@ -526,7 +526,7 @@ h5 {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 90px 0px;
+    padding: 50px 0px;
 }
 
 .president_card {
@@ -608,7 +608,7 @@ h5 {
     box-shadow: 0 0 15px rgb(0 0 0 / 10%);
     border-bottom: 2px solid #ed3b3e;
     border-radius: 20px;
-    min-height: 430px;
+    min-height: 330px;
     margin: 20px 15px;
     color: black;
 }
@@ -1705,6 +1705,10 @@ form {
 
     .widget {
         padding: 0px 50px 10px !important;
+    }
+
+    .p_text {
+         padding: 0px;
     }
 }
 

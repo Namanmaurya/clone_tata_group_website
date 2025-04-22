@@ -52,12 +52,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
         $mail->Port       = 465;
 
-        $mail->setFrom('namanm0021@gmail.com', 'Your Name'); // Fix sender email
-        $mail->addAddress('receiver-email@gmail.com', 'Receiver Name');
+        $mail->setFrom('namanm0021@gmail.com', 'Naman Kumar Maurya');
+        $mail->addAddress('namanm0021@gmail.com', 'Naman kumar Maurya');
 
-        // Check if PDF file exists and is valid before attaching
+       
         if ($pdf && $pdf['size'] > 0) {
-            // Attach the PDF file
+           
             $mail->addAttachment($pdf['tmp_name'], $pdf['name']);
         }
 
